@@ -58,6 +58,12 @@ Documentation is located at [http://vertycal.net/documentation/](http://vertycal
 5. Admin side columns
 6. Styled vertical calendar
 
+== Working Dir ==
+https://tswdev.com/news/
+
+== Demo ==
+
+
 == Changelog ==
 = 1.0.31 =
 * corrected deprecation errors
