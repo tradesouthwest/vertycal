@@ -1,0 +1,15 @@
+Not for Resale (NFR) Software License
+
+Specific and restricted licenses which is made available by software vendor Tradesouthwest directly to 
+the distribution channel and is marked NFR with explicit conditions that it is NOT FOR RESALE. 
+
+This NFR software is not licensed for normal commercial distribution, rent or transfer it in any way to 
+any other entity (company or individual).
+
+The SOFTWARE and accompanying documentation are being licensed to YOU, meaning that YOU have the right to use 
+the SOFTWARE only in accordance to this License Agreement. 
+
+The SOFTWARE is considered in use on a computer/server when it comes loaded on a temporary or permanent memory.
+
+The license is absolutely personal and strictly assigned to YOU, therefore it cannot be rented, sold 
+or however sublicensed to no other entity.
