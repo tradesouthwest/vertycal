@@ -1,0 +1,246 @@
+/* plugin: VertyCal
+ * admin-styles 
+ */
+[class^="vrtcl-"] {
+    box-sizing: inherit;
+}
+.vrtclclearfix:before, .vrtclclearfix:after {
+    content: " ";
+    clear: both;
+}
+.vtrclclearfix:after {
+    display: table;
+    width: 100%;
+    height: 1px;
+    padding: 15px 0;
+}
+.vrtcl-activate{
+    background: #f2f2a0;
+}
+.vrtcl-editor_text{
+    color: #626262;
+    line-height: 1;
+    min-height: 25px;
+    margin-top: 5px;
+    padding: 0;
+    background-color: #f3fcff;
+    display: block;
+}
+.vrtcl-editor_text em{
+    font-weight:lighter;
+    color: #444;
+    font-style: normal;
+    margin-left: 7px;
+}
+.vrtcl-editor_text h4 {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 1.4;
+}
+.vrtcl-editor_text h4 i{
+    position: relative;
+    top: -2px;
+    left: calc( 86% - 6vw );
+}
+.vrtcl-editor_text ul {
+    margin: 0;
+    padding: 0 10px;
+    position: relative;
+    list-style: inside none;
+    border-bottom: thin solid #ddd;
+    border-right:  thin solid #ddd;
+}
+.vrtcl-editor_text ul li{
+    color: inherit;
+}
+.vrtcl-editor_text ul li:first-child{
+    color: #007011;
+    padding-top: 8px;
+    font-weight: bold;
+}
+.vrtcl-editor_text ul li > span{
+    font-weight: inherit;
+    color: #c05848;
+}
+.post-type-vertycal .hndle.ui-sortable-handle,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu.menu-icon-vertycal {
+    background-image: linear-gradient(to right, #c0efee, #edefee, #f9f9f9);
+    color: #000;
+}
+li#menu-posts-vertycal .dashicons-admin-post::before{
+    content: "\f145";
+    color: goldenrod;
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{
+    color:#222;
+    border: 1px solid #222;
+    border-radius: 3px;
+}
+.ui-datepicker .ui-datepicker-prev span:before,
+.ui-datepicker .ui-datepicker-next span:before{
+    display: block;
+    position: relative;
+}
+.ui-datepicker .ui-icon{
+    text-indent: 0px;
+}
+.ui-helper-clearfix:after {
+    font-size: .1px;
+    color: transparent;
+}
+.ui-datepicker .ui-datepicker-prev span:before{ content:"<"; right: -3.5px}
+.ui-datepicker .ui-datepicker-next span:before{ content:">"; left: 3.5px}
+.vrttip {
+    display: inline-block;
+    vertical-align: top;
+    width: 1.122em;
+    height: 1.122em;
+    background: #333;
+    color:#f4ffff;
+    padding: 1px;
+    cursor: help;
+    border-radius: 50%;
+    text-align: center;
+    position:relative;
+    left: 0;
+    top: 0;
+    border: thin dashed #eee;
+    line-height: 1.1;
+}
+.vrttip:hover,
+.vrttip.active {
+box-shadow: 0px 0px 4px 4px #ade;
+}
+.vrttip:after {
+content: " ";
+}
+.vrttip[data-title]:hover:after {
+    border-top: 1px solid #bbdbbd;
+    border-right: 1px solid #bbdbbd;
+    border-bottom: 2px solid #3a9d8e;
+    border-left: 3px solid #4abdae;
+    background-color: #fcfcfc;
+    box-shadow: 0 0 4px 4px #ddd;
+    position: absolute;
+    padding: 3px 8px;
+    font-size: 92.5%;
+
+    z-index: 9998;
+    margin-left: -80px;
+    margin-top: 30px;
+    width: 130px;
+	content: attr(data-title);
+}
+.vrttip[data-title]:after {
+    content: '';
+    color: #111;
+    text-align: initial;
+    font-weight: lighter;
+}
+.vrttip[data-title] {
+    position: relative;
+}
+#vrtclWrap th{
+    padding-left:6px;
+}
+#vrtclWrap tr{
+    border-bottom: thin dotted #bcd;
+}
+#vrtclWrap tr:nth-child(odd) {
+    background: #ececec;
+}
+#vrtclWrap tr:nth-child(even) {
+    background: #fafafa;
+}
+#vrtclWrap td fieldset {
+    padding-bottom: 0;
+}
+#vrtclWrap {
+    background: rgba(252,252,252, .3);
+    padding-left: 7px;
+}
+#vrtclWrap .form-table th{
+    background: inherit;
+    color: #006f45;
+}
+li.vertycal-question{font-weight: 600; color:#095; margin-top:8px;margin-bottom:0px;}
+li.vertycal-answer{margin-left:1em;}
+#vrtclWrap sup{
+    position: relative;
+    top: -5px;
+}
+.vrtcl-wrap-docs{
+    margin-left:0;
+    padding-left:0;
+}
+.vrtcl-wrap-docs h5 {
+    margin-bottom: -1em;
+margin-top: 1em;
+text-align: center;
+}
+.text_field.location{
+    width: 80%;
+}
+.vrtcl-dashbrd {
+    padding-top:8px;
+    padding-bottom: 8px;
+    padding-left:   8px;
+    background: rgba(242,248,250, 0.9);
+}
+.vrtcl-dashlogo img {
+    max-width: 100%;
+    height: 60px;
+    margin: 0 auto;
+}
+.vrtcl-block{
+    display:block;
+    width: 100%;
+    position:relative;
+    margin: 0 auto;
+}
+.shorterspan{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 96%;
+}
+table.vrtcl-list{
+    border: thin solid #ddd;
+    width: 100%;
+    table-layout: fixed;
+background: #ffffff;
+}
+table.vrtcl-list tr:nth-of-type(2n) {
+    background: #e2fafc;
+}
+table.vrtcl-list td,
+table.vrtcl-list th{
+    padding: 4px;
+    vertical-align: middle;
+}
+table.vrtcl-list tr th em{
+    color:#626262;
+}
+#footer-note {
+    width: 100%;
+    height: 2em;
+    display: block;
+}
+#wpfooter{
+    color: inherit;
+}
+#vertycal_dashboard_widget{
+    min-height:1em;
+    width: 100%;
+    display: inline-table;
+}
+/* #vertycal_dashboard_widget:after,
+table.vrtcl-list:after {
+    content: " ";
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 1px;
+} */

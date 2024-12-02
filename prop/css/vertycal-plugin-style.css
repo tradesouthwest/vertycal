@@ -1,0 +1,1026 @@
+@charset "UTF-8";
+/* VertyCal
+   Anchor links inherit color from theme.
+   Same with fonts.
+*/
+[class^="vrtcl-"] {
+    box-sizing: inherit;
+}
+.vrtclclearfix:before, .vrtclclearfix:after {
+    content: " ";
+    clear: both;
+}
+.vtrclclearfix:after {
+    display: table;
+    width: 100%;
+    height: 1px;
+    padding: 15px 0;
+}
+.vrtcl-block {
+    display: block;
+}
+.scheduler .permalnk em,
+.vrctl-hidden{
+    display: none;
+    visibility: hidden;
+}
+.vrtcl-main {
+    margin: 0 auto;
+    width: 96%;
+    position: relative;
+}
+.vrtcl-main .vrtcl-docs ol, .vrtcl-main .vrtcl-docs ul {
+    list-style: none;
+    margin: 0px;
+}
+.vrtcl-main .vrtcl-docs ul li {
+    margin-left:1em;
+    list-style: inside square;
+    margin-bottom: .575em;
+}
+.vrtcl-main .vrtcl-docs ul li:first-child {
+    list-style:none;
+    font-weight:bold;
+    margin-top: 1em;
+}
+li.vertycal-question{
+   font-weight: 600;
+    color:#095;
+    margin-top:8px;
+   margin-bottom:0px;
+}
+li.vertycal-answer{
+   color: inherit
+}
+.vrtcl-main .entry-footer{
+    display: block;
+    padding: 2em 1em;
+    margin-bottom: 5px;
+    text-decoration: none;
+    background: #ffffff;
+    color: #155d93;
+    border: thin solid #afafaf;
+    height: 2em;
+    width: 100%;
+}
+.vrtcl-main .entry-footer p:first-child{
+    position: relative;
+    top: 2px;
+}
+table.calendar-main{
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    background: #f9f9f9;
+}
+table.calendar-main tr.scheduled-item{
+    padding:0;
+}
+table.calendar-main td{
+    font-size: 16px;
+}
+table.calendar-main .scheduled-item, #footMenu > td {
+    padding-left: .825rem;
+}
+/* ========================================= Tabs */
+#tabs{
+    width:100%;
+    margin: 2em auto 2em 2em;
+    border-radius:3px;
+}
+input[type="radio"]{
+    display:none;
+}
+#tabs label{
+    background:#fafafa;
+    display:inline-block;
+    margin-right:1px;
+    padding:14px 20px;
+    font-size: 100%;
+    font-weight:700;
+    color:#444;
+    border-top: 2px solid #155d93;
+    cursor:pointer;
+    border-left: 1px solid #256da3;
+    border-right: 1px solid #256da3;
+}
+#tabs .field-content label {
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    padding: 0;
+    background: transparent;
+}
+input[name="tabs"]:hover{
+    background:#d9d9d9;
+    color:#707070;
+} 
+.tab{
+    min-height:200px;
+    background:#e9e9e9;
+    display:none;
+    padding:12px;
+    color: #414141;
+    margin-top: -15px;
+}
+#toggle-tab1:checked ~ label[for="toggle-tab1"], #toggle-tab2:checked ~ label[for="toggle-tab2"], #toggle-tab3:checked ~ label[for="toggle-tab3"] {
+    background:#155d93;
+    margin-bottom:0;
+    color:#ffffff;
+    cursor:default;
+    padding: 14px 20px;
+}
+#toggle-tab1:checked ~ #tab1, #toggle-tab2:checked ~ #tab2, #toggle-tab3:checked ~ #tab3 {
+    display:block;
+}
+label[for="toggle-tab1"]{margin-left:1em}
+#footMenu{
+    text-align: center;
+}
+table.calendar-main tr:nth-of-type(even){
+    background: #ffffff;
+}
+table.calendar-main td{
+    padding: .5em .25em;
+}
+table.calendar-main th{
+    font-size:smaller;
+}
+th.scheduled-item-prime {
+    width: auto;
+    text-align:center;
+    letter-spacing: 1px;
+}
+th.scheduled-item-first{
+    background: inherit;
+    text-align: center;
+}
+
+th.scheduled-item-last {
+    width: auto;
+    font-weight: normal;
+    text-align: center;
+}
+.vrtcl-inline-ul {
+    position: relative;
+    height: auto;
+    width: 100%;
+    bottom: .58em;
+    line-height: 1.82;
+}
+.vrtcl-inline-ul, .vrtcl-inline-ul ul, .vrtcl-inline-ul ul li, .vrtcl-inline-ul li {
+    display: inline;
+    list-style: none;
+}
+span.vrtcl-foot-right{
+    position: relative;
+    top: 0;
+    left: 40vw;
+    padding: 2px 8px;
+}
+span.vrtcl-foot-right:after{
+    content: ' ';
+    display:table;
+    clear:both;
+}
+span.disc{
+    width: 1.222em;
+    display: inline-block;
+    position: relative;
+    left: 1px;
+    top: 0;
+}
+span.disc:before{
+    content: "\25fe";
+    position:relative;
+    color: inherit;
+}
+span.disc:after{
+    content: "";
+    clear:both;
+    display: table;
+}
+span.maybemap{
+    overflow: hidden;
+    max-width: 100%;
+}
+.maybemap img {
+    height: .975em;
+}
+span.maybemap:before{
+    content: url(vgps24x27.png);
+    position:relative;
+    top: 0;
+    background: #a0f2ff;
+    padding: 6px 7px 0;
+    display: inline-block;
+    left: 0;
+    box-shadow: 0 0 1px 1px #bbbbbb;
+    border: 1px solid rgba(0,0,0, .5);
+}
+span.maybetel{
+    overflow: hidden;
+    max-width: 100%;
+}
+.maybetel img {
+    height: .975em;
+}
+span.maybetel:before{
+    content: url(call-32x32.png);
+    position:relative;
+    top: 0;
+    background: #a0f2ff;
+    padding: 6px 7px 0;
+    display: inline-block;
+    left: 0;
+    box-shadow: 0 0 1px 1px #bbbbbb;
+    border: 1px solid rgba(0,0,0, .5);
+}
+.entry-footer address p{
+    margin-bottom: 1em;
+}
+.page .vrtcl_excerpt {
+    font-size: smaller;
+    padding-left: 3px;
+    color: #4b4b4b;
+    display: inline-block;
+    max-width: 94%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+    vertical-align: middle;
+}
+.page .vrtcl_excerpt p{
+    display:inline;
+    vertical-align: baseline;
+    margin-left: -5px;
+}
+.page .vrtcl_excerpt a.xoox{
+    text-decoration: none;
+    color:blue;
+}
+.page .vrtcl_excerpt a:not(.close ) {
+    position: relative;
+    bottom: 0;
+}
+.single .vrtcl_excerpt.vertycal_single span.vrtclcontent{
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    float: left;
+}
+.single-vertycal .entry-header{
+    margin-bottom: 20px;
+    width: 100%;
+    border-bottom: thin solid #eee;
+}
+.vrtcl-inner{
+    word-wrap: break-word;
+    white-space: initial;
+    overflow-x: hidden;
+    vertical-align: baseline;
+    display: inline;
+}
+.vrtcl-inner .inner-title, .scheduled-item .inner-date-time {
+    line-height: inherit;
+}
+.vrtcl-inner .inner-title {
+    color: #202020;
+    padding-left: 5px;
+    max-width: 60%;
+    overflow: hidden;
+}
+.scheduled-item .inner-date-time {
+    margin-left: .4em;
+}
+.inner-date-time .vrtcl-tm{
+    margin-left: 0;
+    white-space: pre;
+    font-weight: bold;
+    top: 2px;
+    background: #f9f9f9;
+    position: relative;
+    left: 5px;
+
+}
+.inner-date-time .vrtcl-daytime > strong{
+    background: #ffffff;
+    display: inline-block;
+    font-weight: bold;
+    padding: 6px 4px;
+    border-bottom: 1px solid;
+    opacity: .72;
+}
+/* all components inside td of tr
+https://stackoverflow.com/questions/13667941/how-to-set-maximum-height-for-table-cell */
+
+.inner-date-time,
+.cell-inner-excerpt > a,
+.vrtcl-inner a,
+.vrtcl_excerpt,
+.inner-link{
+    display: inline;
+    overflow-y: hidden;
+    max-height: 1.67em;
+}
+section#Schedule, section#Formpost, section#Voptions {
+    padding-top: 0;
+}
+.vrtcl-main fieldset{
+    background-color: #fafafa;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 1px;
+    padding: 5px;
+}
+fieldset.field-content > label {
+    font-weight: bolder;
+    min-width: 230px;
+    display: inline-block;
+    position: relative;
+    left: 14px;
+}
+.vrtcl-form-wrapper{
+    line-height: initial;
+}
+.vrtcl-form-wrapper option {
+    font-size: inherit;
+}
+.vrtcl-form-wrapper input, .vrtcl-form-wrapper textarea {
+    font-size: large;
+    position:relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 3px;
+    border: 1px solid #c8c8c8;
+    background-image: none;
+    background-color: #fafafa;
+    width:90%;
+}
+.vrtcl-form-wrapper input:focus, .vrtcl-form-wrapper textarea:focus{
+    background-color: #f0fafb;
+}
+.vrtcl-form-wrapper input[type="button"], .vrtcl-form-wrapper input[type="submit"] {
+    display: block;
+    margin: 0.5px;
+    padding: 8px 15px;
+    color: #383838;
+    text-decoration: none;
+    background: linear-gradient(#efefef, #cccccc);
+    width:20vw;
+    border: thin solid #aaa;
+}
+fieldset.field-content{
+    padding: 10px 8px 8px;
+}
+.field-content input.text_field{
+    color: #161616;
+    padding-left: 5px;
+}
+.field-content input.text_field:focus{
+    border-color: blue;
+}
+.category-dropdown select {
+    margin-left: 1.26em;
+    text-rendering: optimizeLegibility;
+}
+.vrtcl-visible {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: -2em;
+}
+@keyframes fadeout {
+    from {
+        opacity:1;
+   }
+    to {
+        opacity:0;
+   }
+}
+.vrtcl-success {
+    opacity: 0;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 5px 40px;
+    margin-bottom: 1px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #00b953;
+    animation: fadeout 6s;
+}
+#vrtclSuccess {
+    background: rgb(252,252,252);
+    background: rgba(252,252,252, .5);
+}
+.vrtcl-form_handler{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 2em;
+    z-index: 99999;
+}
+.vrtcl-options-block{
+    position: relative;
+    min-height: 372px;
+    display: block;
+    background-color: #fff;
+    margin-bottom: .222em;
+}
+#date {
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+    padding: 0.5em;
+    text-align: center;
+}
+#clock{
+    display: block;
+    height: 100px;
+    position: relative;
+    top: 0;
+    left: 3.5%;
+}
+#clock p {
+    padding: 0 8px;
+    font-weight: bolder;
+}
+.unit{
+    float:left;
+    margin: 0 5px;
+    background: #155d93;
+    border-radius: 15px;
+    box-shadow: 0 2px 2px #444;
+    color:#fff;
+    text-align: center;
+    text-shadow: 0 2px 2px #000;
+    width: 20%;
+    font-size: 2.88em;
+}
+.vrtcl-main textarea#vertycal_excerpt {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+.popup {
+    margin: 70px auto;
+    padding: 20px 15px;
+    background: #fff;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+    transition: all 2s ease-in-out;
+    top: 25vh;
+}
+.popup .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all 200ms;
+    font-size: 30px;
+    display:block;
+    border: 3px solid red;
+    border-radius: 150px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.popup .close:hover {
+    color: green;
+}
+.popup .vrtclcontent {
+    min-height: 5vh;
+    max-height: 100%;
+    overflow: auto;
+}
+.vrtcl-pagination {
+    padding:20px 0;
+    position:relative;
+    font-size:11px;
+    line-height:13px;
+}
+.vrtcl-pagination .post-navigation{
+    width: 100%;
+}
+.vrtcl-pagination span, .vrtcl-pagination a {
+    display:block;
+    float:left;
+    margin: 2px 2px 2px 0;
+    padding:8px 12px 7px 12px;
+    text-decoration:none;
+    width:auto;
+    color:#fff;
+    background: #555;
+    font-size: x-large 
+}
+.vrtcl-pagination a:hover{
+    color:#fff;
+    background: #3279BB;
+}
+.vrtcl-pagination .current{
+    padding:8px 12px 7px 12px;
+    background: #155d93;
+    color:#fff;
+}
+#Paginate .vrtcl-pagination nav {
+    min-height: 3em;
+    overflow: hidden;
+}
+.small_text, .archive .small_text > p{
+    font-size: smaller;
+    margin-top: 0;
+}
+.archive h3.entry-title a{
+    text-decoration: none;
+}
+.archive h3.entry-title {
+    position: relative;
+    bottom: 5px;
+    border-bottom: thin solid #ccc;
+    font-size: large;
+    line-height: 1;
+    padding-bottom: 4px;
+    padding-top: 3px;
+}
+.vertycal_category_page article{
+    margin: 0;
+}
+.vrtclcontent{
+    width: 90%;
+    display: block;
+}
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{
+    color:#222;
+    border: 1px solid #222;
+    border-radius: 3px;
+    background: #fafafa;
+}
+.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+    padding: 0;
+    border: none;
+    box-shadow: 0 2px 2px #888;
+}
+.ui-datepicker .ui-datepicker-prev span:before, .ui-datepicker .ui-datepicker-next span:before{
+    display: block;
+    position: relative;
+}
+.ui-datepicker .ui-icon{
+    text-indent: 0px;
+}
+.ui-datepicker .ui-datepicker-prev span:before{
+    content:"<";
+    right: -3px;
+    top: -3px;
+}
+.ui-datepicker .ui-datepicker-next span:before{
+    content:">";
+    left: 3px;
+    top: -3px
+}
+.single-vertycal label[for="vertycal_markdone"]{
+    white-space:nowrap;
+}
+.single .vrtcl-returnto{
+    position: relative;
+    left: calc( 3vw + 3em );
+}
+.single-vertycal .edit-link a.post-edit-link,
+.vrtcl-returnto > button{
+    background: rgba(0,0,0, .15);
+    border: thin solid #ddd;
+    padding: .4em 1em .34em 1em;
+}
+.single-categories a {
+    letter-spacing: initial;
+    text-decoration: underline;
+}
+.single .nav-previous, .single .nav-next {
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+    box-shadow: 0 0 1px #cccccc;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.single.single-vertycal .post-edit-link, .inner-link a, .vrtcl-btn {
+    box-shadow: 0 0 1px 1px #bbbbbb;
+    padding: 7px 8px;
+    font-weight: bolder;
+    background: #f5fafb;
+}
+.inner-link a, .inner-link.btn_add a {
+    padding: 4px 8px;
+    font-weight: bold;
+}
+.inner-link a{
+    transition: box-shadow 0.25s ease;
+    box-shadow: 0 0 1px 1px #cccccc;
+    border-bottom: 1px solid;
+}
+.inner-link a:hover{
+    background: #fcfcfc;
+    box-shadow: 0 0 1px 2px #aaaaaa;
+}
+.inner-link a:first-child{
+    margin: .245em;
+    font-weight: lighter;
+    font-size: smaller;
+    
+}
+.inner-link b{
+    font-size:smaller;
+}
+.single .nav-previous a, .single .nav-next a, .single.single-vertycal .post-edit-link{
+    padding: 4px 6px;
+    margin: 2px 10px;
+    text-align: center;
+    display: inline-block;
+}
+.single .nav-previous a:hover, .single .nav-next a:hover, .single.single-vertycal .post-edit-link:hover, .vrtcl-btn:hover, .inner-link input[type="submit"]:hover, .inner-link.btn_add a:hover {
+    background: rgba(202,242,242, .35);
+    cursor: pointer;
+}
+.single .entry-footer a.post-edit-link {
+    margin: 1em .67em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.inner-link {
+    display: inline;
+    overflow: hidden;
+    vertical-align:middle;
+}
+.vrtcl-footer-markdone{
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.mark-done{
+    margin-left: 0;
+    clear: left;
+    margin-top: 1em;
+    background: #faaaa0;
+    padding: 5px;
+    color: #000000;
+    text-shadow: .25px .5px .75px #878787, 0 0 1px #ffffff;
+}
+.single .nav-previous a:before, .single .nav-next a:after{
+    position: relative;
+    display: inline-block;
+}
+.single .nav-previous a:before{
+    content: "\2190";
+    right: 1em;
+}
+.single .nav-next a:after{
+    content: "\2192";
+    left: 1em;
+}
+section.vrtcl_single > article.hentry{
+    padding-left: 15px;
+    width: 98%;
+}
+/* excerpt media file anchors override */
+.single .vrtcl-content .vrtclcontent p a{
+    color: blue;
+    background: #fbfbfb;
+    padding: 4px;
+    border: thin solid #bbb;
+}
+form.mark-done input[type="submit"]{
+    background-image: none;
+    min-width: 2.444em;
+    padding: .4em 1em .34em 1em;
+    text-align:center;
+    font-weight: bolder;
+    background: #f0fafb;
+    border: thin solid #ccc;
+    margin-left: 5px;
+    color: blue;
+    box-shadow: 0 0 1px 1px #555555;
+    cursor: pointer;
+}
+.author-is {
+    padding: 2px 6px;
+    font-size: .938em;
+    position: relative;
+    top: .5em;
+    display: inline-block;
+}
+.author-is span{
+    color:black;
+    font-style: italic
+}
+.inner-link input.vrtcl-checkbox{
+    vertical-align: middle;
+}
+.author-single{
+    display:block;
+    width:100%;
+    margin: 6px 0;
+    border-bottom:thin solid #ccc;
+    clear:left;
+}
+#Schedule h4:first-child, #Formpost h5:first-child, #Voptions h5:first-child {
+    font-size: 1em;
+    line-height: 1.888em;
+    background: #fff;
+    padding: 1px 1px 6px 12px;
+}
+.single .vrtcl_single article.vertycal.type-vertycal footer.entry-footer, article.vertycal footer{
+    width:100%;
+}
+.vrtcl-before-sheduler{
+    min-height: 9em;
+    display: block;
+    overflow-y: auto;
+    margin: 0 auto;
+    width: 98.8992%;
+}
+/* ========================================== Categories Menu */
+.container-cats{
+    width: 100%;
+    min-height: 3em;
+    display: block;
+    margin-bottom: 5px;
+    height:auto;
+}
+.toggle:after{
+    content: " [+/-]";
+    position: relative;
+    left: 8px;
+    color: inherit;
+}
+.cats-toggle-btn {
+    display: block;
+    padding: .84em 1em;
+    margin-bottom: 5px;
+    text-decoration: none;
+    background: #ffffff;
+    color: #155d93;
+    border: thin solid #ccc;
+}
+.cats-toggle-btn:hover, .cats-toggle-btn:focus{
+    border-color: #256da3;
+}
+ul#menucat {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    font-size:1em;
+}
+ul#menucat li {
+    float: left;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 1px 1px rgba(255,255,255, 1) 
+}
+ul#menucat li:not(a){
+    background: #efefef;
+    padding:1px;
+    font-size: .9em;
+}
+ul#menucat ul li {
+    float: none;
+    position: relative;
+    border-bottom: 1px solid #7EAED7;
+   /* fixes gap problem in IE */
+    border-left: 1px solid #9cc;
+    z-index:1000;
+}
+ul#menucat li ul {
+    margin: 0;
+    padding: 0;
+    display:none;
+    list-style: none;
+    position: absolute;
+    background: #9CC;
+}
+ul#menucat ul ul{
+    margin-left: .2em;
+    position: absolute;
+    top: 0;
+   /* if using borders, -1px to align top borders */
+    left: 100%;
+}
+ul#menucat li a, ul#menucat li a:link, ul#menucat li a:visited, ul#menucat li a:active{
+    display: block;
+    padding: .14em .22em;
+    text-decoration: none;
+    background: #155d93;
+    font-size:inherit;
+    color: #FFFFFF;
+}
+ul#menucat li a:hover{
+    background: #3279BB;
+}
+ul#menucat ul li a:link, ul#menucat ul li a:visited, ul#menucat ul li a:hover, ul#menucat ul li a:active {
+    width: 8em;
+}
+#Schedule {
+    z-index: 1;
+}
+/* ============================================ Responsive */ 
+
+@media screen and (min-width: 980px) {
+    .vrtcl-main{
+        padding-top: inherit;
+   }
+    .vrtcl-form-wrapper #VrtclDate, .vrtcl-form-wrapper #vertycal_just_time_meta, .vrtcl-form-wrapper select, .vrtcl-form-wrapper #vrtcl_submit{
+        width: initial;
+        font-size: 1.2em;
+   }
+    .vrtcl-form-wrapper input#title, .vrtcl-form-wrapper textarea {
+        width: 60%;
+        font-size: 1.2em;
+   }
+    #branding figure{
+        display:block;
+   }
+   .inner-date-time .vrtcl-daytime > strong{
+       padding: 3px;
+       font-size:smaller;
+   }
+   #tab3 .vrtcl-docs{
+       width:90%;
+       margin: 0 auto;
+       padding: 5px 30px;
+       color: #000;
+       background: #fcfcfc;
+   }
+}
+@media screen and (min-width: 769px) {
+    th.scheduled-item-first {
+        width: 60%;
+   }
+}
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .vrtcl-main {
+        padding: 15px 10px;
+   }
+    #clock {
+        width: 100%;
+        margin: 0 auto;
+   }
+    #date{
+        line-height: 1.4285 
+   }
+    .unit{
+        border-radius: 8px;
+   }
+    .vrtcl-main .tab button {
+        padding: 10px 8px;
+   }
+    .scheduled-item-first {
+        width: 50%;
+   }
+    .scheduled-item-last {
+        width: auto;
+   }
+    .vrtcl-inner .inner-title {
+        max-width: 52vw;
+   }
+    .page .vrtcl_excerpt{
+        max-width: 99%;
+   }
+    .inner-date-time .vrtcl-tm{
+        margin-left: 1.67em;
+        font-size:larger;
+   }
+}
+@media screen and (max-width: 600px) and (min-width: 441px) {
+    table.calendar-main{
+        min-width: 330px;
+        max-width: 100%;
+        font-weight: normal;
+   }
+    .vrtcl-main .inner-link a {
+        padding: 5px;
+        display: block;
+        margin-top: .345rem;
+        text-align:center;
+   }
+    .inner-link input.vrtcl-checkbox{
+        font-size: larger;
+        width: 25px;
+        height: 25px;
+        transform: scale(1.162);
+        position: relative;
+        top: 4px;
+        left: 4px;
+        margin-bottom:0;
+   }
+    .unit{
+        font-size: 2.3336em;
+   }
+    .scheduled-item-first, .scheduled-item-last, .scheduled-item-prime {
+        font-size:smaller;
+   }
+    th.scheduled-item-first {
+        width: 50%;
+   }
+    span.inner-link > a, form.mark-done input[type="submit"] {
+        font-size: smaller;
+   }
+    .page .vrtcl_excerpt p{
+        padding-top: 4px;
+   }
+    .vrtcl-inner .inner-title {
+        font-size: 1.2em;
+        max-height: 2em;
+        overflow: hidden;
+        display: block;
+        white-space: normal;
+        max-width: 100%;
+        margin-top: -1rem;
+        font-weight: normal;
+   }
+   .author-is{
+    top: .4em;
+        padding: 3px 3px;
+   }
+    .vrtcl-inner{
+        word-wrap:break-word;
+        white-space: initial;
+   }
+    .inner-date-time .vrtcl-tm{
+        margin-left: .67em;
+        font-size:large;
+   }
+   .inner-date-time .vrtcl-daytime > strong{
+       font-size:x-small;
+   }
+   .inner-link a:first-child{
+       padding: 5px;
+   }
+}
+
+@media all and (max-width: 440px) {
+    #tabs label{
+        font-size: 67%;
+   }
+    #Voptions {
+        font-size: 90%;
+   }
+   .author-is{
+        top: .5em;
+   }
+    th.scheduled-item-prime {
+        max-width: 140px;
+   }
+   th.scheduled-item-first {
+        width: 39vw;;
+}
+.xoox {
+    cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+  text-decoration: none;
+}
+.inner-date-time .vrtcl-daytime > strong{
+    font-size: x-small;
+    margin-left: -1px;
+
+}
+    .vrtcl-inner .inner-title {
+        font-size: 1em;
+        max-height: 4em;
+        overflow: hidden;
+        display: block;
+        white-space: pre-line;
+        max-width: 100%;
+        margin-top: -15px;
+   }
+   .inner-link a:first-child{
+    padding: 6px;
+box-shadow: 0 0 1px 1px;
+}
+    .unit{
+        font-size: xx-large;
+   }
+}
