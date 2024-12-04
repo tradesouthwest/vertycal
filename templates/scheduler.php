@@ -86,7 +86,7 @@ get_header();
 
         <footer class="entry-footer">
             
-            <p><?php print( vertycal_count_published() ); ?>
+            <p><?php echo esc_html( vertycal_count_published() ); ?>
             <span class="vrtcl-foot-right"><a href="#" 
             title="<?php esc_attr_e( 'Top^', 'vertycal' ); ?>">
             <?php esc_attr_e( 'Top^', 'vertycal' ); ?></a></span></p>
