@@ -28,12 +28,12 @@
 
 		<?php 
 				   $digitz   = 0;
-				   $post_id  = get_the_ID();
+				   $postid  = get_the_ID();
 		$vertycal_date_time  = get_post_meta(get_the_ID(),'vertycal_date_time_meta',true);
 		$vertycal_just_time  = get_post_meta(get_the_ID(),'vertycal_just_time_meta',true);
 		$vertycal_date_time  = substr( $vertycal_date_time, $digitz );
-		$vertycal_location   = vertycal_get_address( $post_id );
-		$vertycal_telephone  = vertycal_get_telephone( $post_id );
+		$vertycal_location   = vertycal_get_address( $postid );
+		$vertycal_telephone  = vertycal_get_telephone( $postid );
 		?>
 
         <div class="single-vrtcl-inner">
@@ -61,20 +61,20 @@
 		<?php if( $vertycal_location != '' ) : ?>
 
 		<p><a href="http://maps.google.com/?q=<?php print( $vertycal_location ); ?>" 
-			  title="<?php print( vertycal_get_address( $post_id ) ); ?>" 
+			  title="<?php print( vertycal_get_address( $postid ) ); ?>" 
 			  target="_blank">
 		<span class="maybemap"></span> 
-		<?php print( vertycal_get_address($post_id)); ?></a></p>
+		<?php print( vertycal_get_address($postid)); ?></a></p>
 
 		<?php endif; ?>
 
 		<?php if( $vertycal_telephone != '' ) : ?>
 
-		<p id="telDial"><a href="tel:<?php print( vertycal_get_telephone($post_id)); ?>"
-		   				   title="<?php print( vertycal_get_telephone($post_id) ); ?>" 
+		<p id="telDial"><a href="tel:<?php print( vertycal_get_telephone($postid)); ?>"
+		   				   title="<?php print( vertycal_get_telephone($postid) ); ?>" 
 						   target="_blank">
 					<span class="maybetel"></span> 
-					<?php print( vertycal_get_telephone( $post_id )); ?></a></p>
+					<?php print( vertycal_get_telephone( $postid )); ?></a></p>
 	
 		<?php endif; ?>
 
@@ -106,7 +106,7 @@
 		<input type="hidden"    name="user_dname" 
 			   value="<?php echo esc_attr( $user_dname ); ?>">
 		<input type="hidden"    name="vertycal_postid" 
-			   value="<?php echo esc_attr($post_id); ?>">
+			   value="<?php echo esc_attr($postid); ?>">
 		<input type="hidden"    name="vertycal_from" 
 			   value="<?php echo sanitize_email( $user_email ); ?>">
 
@@ -124,10 +124,7 @@
 		?>
 
 	</div>
-		<p><span class="author-single"><?php the_author_meta( 'display_name' ); ?>
-		<span class="vrtcl-returnto"><button onclick="javascript:history.back()" 
-			  title="<?php esc_attr_e( 'back one page please', 'vertycal' ); ?>">
-		<?php esc_html_e( 'Back to Scheduler', 'vertycal' ); ?></button> </span></span></p>					
+		<p><span class="author-single"><?php the_author_meta( 'display_name' ); ?></p>
 		<p><?php 
 		edit_post_link( 
 			sprintf(

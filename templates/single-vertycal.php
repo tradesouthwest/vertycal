@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
-			$post_id = get_the_ID();
+			//$postid = get_the_ID();
 
 	    include VERTYCAL_PLUGIN_PATH . 'templates/single-vertycal_content.php'; ?>
 		

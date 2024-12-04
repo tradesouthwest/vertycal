@@ -54,9 +54,10 @@ wp_dropdown_categories(
 			<input id="vertycal_new_post_action" type="hidden" name="action" 
 		    	   value="vertycal_new_post_action" />
 		    <input type="hidden" id="current_user_id" name="current_user_id"
-		           value="<?php get_current_user_id(); ?>" />
+		           value="<?php echo esc_attr( get_current_user_id() ); ?>" />
 		
-			<?php wp_nonce_field( plugin_basename( __FILE__ ), 'vertycal-new-post-nonce' ); ?>
+			<input type="hidden" value="<?php echo esc_attr( wp_create_nonce( 'vertycal_new_post_nonce' )); ?>" 
+				   name="vertycal_new_post_nonce" />
 
 		</fieldset>
 	</form>

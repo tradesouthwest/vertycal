@@ -162,14 +162,14 @@ function vertycal_func_the_slug()
  */
 function vertycal_save_front_form_post()
 {
-
+	$verify = wp_verify_nonce( $_REQUEST['vertycal_new_post_nonce'], 'vertycal_new_post_nonce'); 
+    if ( !$verify ) { exit("No funny business please"); }
 	global $wpdb, $post;
 
 	$post_page        = get_the_ID();
 	$vrtcl_success    = false;
 	//$current_page     = vertycal_func_the_slug();
 	$vertycal_excerpt = $current_users_id = $errors = $vertycal_cat ='';
-	$current_users_id = absint( $_POST['current_user_id'] );
 
     // Check if user has permissions to save post
     if ( ! current_user_can( 'edit_page', $post_page ) ) return;
@@ -204,6 +204,7 @@ function vertycal_save_front_form_post()
 
 		        $vertycal_cat = sanitize_text_field( $default_category );
 		}
+		$current_users_id = ( empty( $_POST['current_user_id'] ) ) ? '0' : absint( $_POST['current_user_id'] );
 
 	if( $errors == '' ) : 
 

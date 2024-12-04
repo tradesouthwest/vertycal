@@ -26,8 +26,8 @@ get_header();
             <div class="vrtcl-form_handler">
 
             <?php 
-            if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] )
-                &&  $_POST['action'] == "vertycal_new_post_action" )
+            if( isset( $_POST['action'] ) && !empty( $_POST['action'] )
+                &&  $_POST['action'] == 'vertycal_new_post_action' )
             {
                 // Do the wp_insert_post action
                 vertycal_save_front_form_post();
