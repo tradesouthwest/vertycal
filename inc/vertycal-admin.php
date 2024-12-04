@@ -249,8 +249,7 @@ echo '<h4>' . get_bloginfo( 'name' ) . '</h4>
  */
 function vertycal_change_admin_footer(){
     echo '<span id="footer-note">From your friends at <a href="https://tradesouthwest.com/" target="_blank">TradeSouthWest</a>.</span>';
-   }
-
+}
 
 /**
  * Add user capabilities functions | All hooks from admin/_-manager file
@@ -261,13 +260,32 @@ function vertycal_change_admin_footer(){
 function vertycal_run_manager_caps()
 {
 
-$vrtcl_initopt = (empty( get_option('vertycal_options')['vertycal_users_caps'] ) ) 
+$vrtcl_initopt = ( empty( get_option('vertycal_options')['vertycal_users_caps'] ) ) 
             ? 0 : get_option('vertycal_options')['vertycal_users_caps'];
     if( '1' == $vrtcl_initopt ) :             
         require_once( 'vertycal-manager.php' );
     endif;
 
         return false;
+} 
+
+/**
+ * Check if option set - currently not an option. Just a placeholder.
+ * Reverse `return` booleans to get sidebar. 
+ * 
+ * @since 1.1.1
+ * @return Boolean
+ */
+function vertycal_check_for_sidebar()
+{
+
+$vrtclopt = ( empty( get_option('vertycal_options')['vertycal_checkbox_sidebar'] ) ) 
+            ? 0 : get_option('vertycal_options')['vertycal_checkbox_sidebar'];
+    if( '1' == $vrtclopt ) {             
+        return true;
+    } else {
+        return false;
+    }
 } 
 
 function vertycal_count_open_items( $userid )
@@ -297,12 +315,13 @@ function vertycal_editor_gettext( $translation, $original, $typenow )
 	if ( vertycal_is_edit_page( array( 'edit', 'new' ) ) && "vertycal" == $typenow )
 	{
 		if ( 'Excerpt' == $original ) {
-			return __( 'Sheduler notes' );
+			return esc_html__( 'Sheduler notes', 'vertycal' );
 		} else {
 			$pos = strpos( $original,
-						   'Excerpts are optional hand-crafted summaries of your' );
+						   'Excerpts are optional hand-crafted summaries of your' 
+                        );
 			if ( $pos !== false) {
-				return  __( 'Notes show on calendar and are truncated to fit the agenda window.' );
+				return  esc_html__('Notes show on calendar and are truncated to fit the agenda window.', 'vertycal');
 			}
 		}
 	}

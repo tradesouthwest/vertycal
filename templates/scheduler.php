@@ -94,6 +94,12 @@ get_header();
 	    </footer> 
     </div><!--vrtcl-main-->
 </main><!-- .site-main -->
-</div><!-- .content-area -->
-<?php if (function_exists('register_sidebar')) { get_sidebar(); } ?>
-<?php get_footer(); ?>
+</div><?php 
+    if ( function_exists( 'vertycal_check_for_sidebar') ) :  
+        if ( vertycal_check_for_sidebar() ) {
+            if (function_exists('register_sidebar')) { 
+                get_sidebar(); 
+            }
+        }
+    endif; ?>
+    <?php get_footer(); ?>
