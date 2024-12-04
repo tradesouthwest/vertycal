@@ -1,0 +1,1000 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VertyCal\n"
+"POT-Creation-Date: 2019-06-06 20:11-0700\n"
+"PO-Revision-Date: 2019-06-06 20:13-0700\n"
+"Last-Translator: \n"
+"Language-Team: Tradesouthwest\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e;_n;"
+"_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/vertycal-admin.php:16 admin/vertycal-metaboxes.php:148
+msgid "Scheduled"
+msgstr ""
+
+#: admin/vertycal-admin.php:17 templates/scheduler-new.php:7
+msgid "Date"
+msgstr ""
+
+#: admin/vertycal-admin.php:18 templates/scheduler-new.php:8
+msgid "Time"
+msgstr ""
+
+#: admin/vertycal-admin.php:19
+msgid "Status"
+msgstr ""
+
+#: admin/vertycal-admin.php:20
+msgid "Person"
+msgstr ""
+
+#: admin/vertycal-admin.php:21
+msgid "Published On"
+msgstr ""
+
+#: admin/vertycal-admin.php:59 admin/vertycal-admin.php:67
+#: admin/vertycal-admin.php:75
+msgid "Not Set"
+msgstr ""
+
+#: admin/vertycal-admin.php:106
+msgid "Open"
+msgstr ""
+
+#: admin/vertycal-admin.php:161
+msgid " Personal Dashboard"
+msgstr ""
+
+#: admin/vertycal-admin.php:242
+msgid "Current Items: "
+msgstr ""
+
+#: admin/vertycal-admin.php:244
+msgid "User first name: "
+msgstr ""
+
+#: admin/vertycal-admin.php:245
+msgid "User last name: "
+msgstr ""
+
+#: admin/vertycal-admin.php:246
+msgid "User display name: "
+msgstr ""
+
+#: admin/vertycal-admin.php:247
+msgid "Username:  "
+msgstr ""
+
+#: admin/vertycal-admin.php:248
+msgid "User email: "
+msgstr ""
+
+#: admin/vertycal-admin.php:250
+msgid "Visit your Profile page to update any changes."
+msgstr ""
+
+#: admin/vertycal-admin.php:252
+msgid "My Profile"
+msgstr ""
+
+#: admin/vertycal-admin.php:354
+msgid "Sheduler notes"
+msgstr ""
+
+#: admin/vertycal-admin.php:359
+msgid "Notes show on calendar and are truncated to fit the agenda window."
+msgstr ""
+
+#: admin/vertycal-email-html.php:5
+msgid "response as soon a we can."
+msgstr ""
+
+#: admin/vertycal-email-html.php:38 templates/vertycal-email-html.php:34
+msgid "Marking Updated Status: "
+msgstr ""
+
+#: admin/vertycal-email-html.php:44 templates/vertycal-email-html.php:40
+msgid "Received From: "
+msgstr ""
+
+#: admin/vertycal-email-html.php:50 templates/vertycal-email-html.php:45
+msgid "Status."
+msgstr ""
+
+#: admin/vertycal-email-html.php:51 templates/vertycal-email-html.php:46
+msgid ""
+"Status should be marked by an administrator or proper person to update "
+"status accordingly. This is only a message that the person sending this "
+"report is validating the status."
+msgstr ""
+
+#: admin/vertycal-email-html.php:79
+msgid "The To: email address appears to be invalid."
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:14
+msgid "Pick Date Time"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:22
+msgid "Pick Time"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:30
+msgid "Mark As"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:38
+msgid "Location Address"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:46
+msgid "Telephone Dial"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:109 admin/vertycal-metaboxes.php:130
+msgid "Optional"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:149
+msgid "Pending"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:150
+msgid "On Board"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:151
+msgid "Fulfilled"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:212
+msgid ""
+"Working notes are private and will not display on &#39;Scheduler&#39; but "
+"will show on &#39;Scheduled&#39; full page"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:213
+msgid "Attachment Display Settings notes: "
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:214
+msgid ""
+"Save uploaded files as &#39;<em>Media File</em>&#39; will <b>open the file "
+"to desktop</b> when viewed. "
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:215
+msgid ""
+"Save uploaded files as &#39;<em>Link to Attachment Page</em>&#39; will "
+"<b>open that file within the Browser page</b> when viewed."
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:219
+msgid "No Toggle No sort Working Notes"
+msgstr ""
+
+#: admin/vertycal-metaboxes.php:220
+msgid "Working Notes"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:19
+msgid "VertyCal Options Settings"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:20
+msgid "VertyCal Settings "
+msgstr ""
+
+#: admin/vertycal-settings-page.php:73
+msgid "Instruction | Help"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:84 admin/vertycal-settings-page.php:720
+msgid "Public Heading Title"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:94
+msgid "Set title in table header"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:95
+msgid "Set title that appears at the top of the Scheduler page form table"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:98 inc/vertycal-template-actions.php:63
+#: vertycal-cpt-init.php:13 vertycal-cpt-init.php:14
+msgid "Schedule"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:104 admin/vertycal-settings-page.php:723
+msgid "Page Name of Scheduler"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:114
+msgid "Template alternate name"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:115
+msgid ""
+"If you do not use &#39;Scheduler&#39; for your page name please fill it in "
+"here."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:116
+msgid "ONLY change if not using default page!"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:118
+msgid "dedicated page name"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:124
+msgid "Email to Send Fulfilled"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:134
+msgid "Email address to send Mark Done notice."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:135
+msgid ""
+"Enter email address to where you want to receive the notice that will "
+"represent a completed task."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:144
+msgid "Bottom of Tables Margin"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:154
+msgid "Bottom of page spacing"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:155
+msgid ""
+"Set the number of pixels between the bottom of your single post entry and "
+"the footer."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:164 admin/vertycal-settings-page.php:732
+msgid "Scheduler Font Size"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:174
+msgid "Font size in percentage"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:175
+msgid "Set the size of your font in the Scheduler tables."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:184 admin/vertycal-settings-page.php:735
+msgid "Limit User Data"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:194
+msgid "Check to allow user to see and edit only their own posts."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:198
+msgid ""
+"This option allows only Administrator to see or edit every user scheduled "
+"post. Even Media uploads will be restricted."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:205 admin/vertycal-settings-page.php:738
+msgid "Mark Complete Usage"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:215
+msgid "Check to have access to marking status publically."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:220
+msgid ""
+"By default marking a task as complete must be done on the Admin side editor "
+"page. \n"
+"                                Checking this box will allow task to be "
+"marked complete directly from the Scheduler page.\n"
+"                Once checked and submitted an email is sent to the admin of "
+"site."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:228
+msgid "Show or Hide Year"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:238
+msgid "Check to remove year display from Scheduler."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:243
+msgid ""
+"By default year will show on the Scheduler table page. \n"
+"                                Checking this box will remove the display of "
+"the year from the Scheduler table view."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:250 admin/vertycal-settings-page.php:744
+msgid "Add Custom Dashboard Widget"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:260
+msgid "Check to re-brand dashboard with custom widget."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:264
+msgid ""
+"This option personalizes the dashboard with custom information for each "
+"logged in user."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:271
+msgid "Date Time Primary Color"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:276 admin/vertycal-settings-page.php:296
+#: admin/vertycal-settings-page.php:316
+msgid "Color setting"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:284
+msgid "Set text color in Sheduler display table."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:285
+msgid "DateTime |first field| Also will be the themed color for admin sidebar."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:291 admin/vertycal-settings-page.php:750
+msgid "Admin Text Color"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:304
+msgid "Set text color for menu items."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:305
+msgid ""
+"Menu items for the admin sidebar - mostly only text link color will change."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:311 admin/vertycal-settings-page.php:753
+msgid "Admin Background Color"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:324
+msgid "Set background color in admin page."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:325
+msgid "Most likely the page you are now on."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:330 admin/vertycal-settings-page.php:756
+msgid "Determine What Content Shows"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:335
+msgid ""
+"Users that are logged in will see only the content you allow if one of the "
+"last two choices are selected. Select Protect All Content and only logged in "
+"users will see all pages."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:340 admin/vertycal-settings-page.php:759
+msgid "Set Post ID to Show for Options"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:351
+msgid "Enter the post ID number to display on the Options page of Scheduler."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:352
+msgid ""
+"Create a post using the standard post type and get the ID of said post by "
+"looking at the address bar. The ID number will be followed by &#39;?edit."
+"php=xxxx&#39;."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:353
+msgid "See tip on how to find ID"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:372
+msgid "What Content to make Public"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:375
+msgid "Only logged in users will see pages"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:376
+msgid "Protect All VertyCal Pages"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:379
+msgid "Anyone will see only Scheduler page."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:380
+msgid "Protect Single Listing Publicly"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:383
+msgid "Logged in users will see both Scheduler and single Scheduled pages."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:384
+msgid "No Restrict Sheduler Page"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:387
+msgid "Logged in users will see only Scheduler page."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:388
+msgid "Protect Single Listing Only"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:391
+msgid "Everyone will see both pages but not Add New form"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:392
+msgid "Publicly View All Pages Debugging only"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:717
+msgid "FAQ - Get more information on the following options and settings"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:721
+msgid ""
+"This field sets the title of the Scheduler table. This helps brand your site "
+"to any type of listing you would like it to be. Possible titles could be "
+"Schedules, Scheduler, Deliveries, Events, Meetings, etc."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:724
+msgid ""
+"A page name <!>is required<!> to make the VertyCal scheduler page display "
+"the table page to the public, or private. By default the page name is "
+"Scheduler and you should not have to change this unless you would like to "
+"have the url in the address bar display a different name--such as service-"
+"calls, etc. It may also be needed for language translations where you "
+"language type set is only readable with a certain font, maybe."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:726
+msgid "Email to Send Notification"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:727
+msgid ""
+"By adding an email to this field you are telling the plugin to send an email "
+"to the address you enter whenever a scheduled item is marked Complete. If "
+"you leave this blank then no emails will be sent. By default your WordPress "
+"admin email will not be used. Be sure to add an email here if you want to "
+"receive messages."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:729
+msgid "Schedule Page Margin"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:730
+msgid ""
+"This setting is for using VertyCal with themes which may or may not support "
+"VertyCal plugin. Default is 15 pixels so you may not need to change "
+"anything. The setting makes more space between the bottom of the scheduling "
+"table and whatever comes after that in your theme. This helps with mobile "
+"views as well. Adjust accordingly by experimenting with various devices. By "
+"default the Scheduler Theme* that is designed for VertyCal should work well "
+"on all devices. Also check the Custimzer settings if you are using the "
+"Scheduler Theme. There are several functions to help you preserve more space "
+"and helps provide a cleaner user interface."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:733
+msgid ""
+"You can set the size of the font in the scheding table. This setting is "
+"adjusted by a percentage factor of the theme default font size. If the body "
+"tag has a font size of 16px, for example, then 100% would be 16 pixels."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:736
+msgid ""
+"This option allows users to edit only their own items and see only their own "
+"attachments such as documents and media they may have uploaded. Settings are "
+"restricted to allow only Administrators to edit_posts, edit_published_posts, "
+"edit_others_posts and edit_private_posts. Ticing this box makes only "
+"Administrator level users have the capabilities to do these tasks. Otherwise "
+"if you uncheck the box field you will have all items including media and "
+"editing of others items available. This could be used if you have a team or "
+"only one person using the site and you want to have broader access to "
+"editing items."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:739
+msgid ""
+"By ticcing this option your are allowing users to mark a Scheduled item as "
+"&#39;Fulfilled&#39. By default marking a task as complete must be done on "
+"the Admin side editor page. Checking this box will allow task to be marked "
+"complete directly from the Scheduler page. Once checked and submitted an "
+"email is sent to the admin of site."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:741
+msgid "Show Hide Year"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:742
+msgid ""
+"By checking the box in this setting you will be removeing the year from in "
+"front of the first displayed date in the scheduler table. By unchecking you "
+"will be showing the year date format. Show is the default."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:745
+msgid ""
+"By activating the branding option you are turning on several settings and "
+"optimizing components to the Admin side Dashboard and Menus. Turning on this "
+"selection will effect most of the settings options. For example if you want "
+"to use the color settings for more than just the public/front-side colors. "
+"Once this is turned on you can custom brand your backend to fit your company "
+"branding."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:747
+msgid "Date Time Primary Colors"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:748
+msgid ""
+"If the branding option is activated this options and the next two options "
+"will work. This color option sets the sidebar menu color AND the color of "
+"the text on the scheduler front side table. You may try several "
+"configurations to get the one that works best for you branding to match your "
+"company colors or just to make the screen easier to read for your users."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:751
+msgid ""
+"Set the text color for all elements inside the administrative page menu "
+"sidebar. This color should be the opposite contrast of the above setting "
+"which is the background color of sidebar menus."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:754
+msgid ""
+"Setting the background color of your working admin main body using this "
+"option will also set the background color of the main scheduler table on the "
+"front viewable side."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:757
+msgid ""
+"By default all content of this plugin should be private and not viewable to "
+"the public with the exception of the scheduler table. You may change this by "
+"selecting on of the four options. 1. Protect All VertyCal Pages - just means "
+"anyone must be logged in to view any VertyCal page. 2. Protect Single "
+"Listing Publicly. This protects only the single full page listing of a "
+"scheduled item. You will know this page by looking at the address bar and it "
+"says &#39;scheduled/&#39; just before the name of the page item. By contrast "
+"the page you see the main scheduler table on will display &#39;"
+"scheduler&#39; in the address bar. 3. No Restrict Scheduler Page. Logged in "
+"users will see both Scheduler and single Scheduled pages. But both pages "
+"will not be seen by the public. 4. Protect Single Listing Only. Logged in "
+"users will see only Scheduler page. This means that no one but Admins will "
+"see any single Scheduled page. 5. Publicly View All Pages Debugging only. "
+"Everyone will see both pages but not able to use Add New form. only "
+"recommended if your information is OK to be seen publically."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:760
+msgid ""
+"Enter the post ID number to display on the Options page of Scheduler. You "
+"can add any tyype of content to a post and build an buide book or any type "
+"of regulations or service level expectations, maybe. Create a post using the "
+"standard post type and get the ID of said post by looking at the address "
+"bar. The ID number will be followed by &#39;?edit.php=xxxx&#39;."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:766
+msgid "FAQ"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:767
+msgid "Schedule table looks bad on page"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:768
+msgid ""
+"Your theme may not support Full Width Layout. First try looking for a Full "
+"Width or No Sidebar template in the page editor. If neither is available, or "
+"do not work, Try removing the widgets inside of any sidebar from the Widgets "
+"page."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:769
+msgid "Added new user but they can not add Shedules"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:770
+msgid ""
+"You must make the new user an Editor or Administrator when the new user is "
+"added. This can be done under Users > Role."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:773
+msgid "Options Settings Reference"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:812
+msgid "Shortcode to Use"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:813
+msgid "Where to Use"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:814
+msgid "Function or Page"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:818
+msgid "Displays the date on the user Dashboard page."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:822
+msgid "Displays the logged in user&#39;s IP."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:823
+msgid "User Dashboard."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:838
+msgid "Plugin Help: "
+msgstr ""
+
+#: admin/vertycal-settings-page.php:851
+msgid "For more information hover over the tips icon."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:852
+msgid "Or view Instructions Tab referenced superset."
+msgstr ""
+
+#: admin/vertycal-settings-page.php:872
+msgid "General Options"
+msgstr ""
+
+#: admin/vertycal-settings-page.php:876
+msgid "Instructions"
+msgstr ""
+
+#: inc/vertycal-functions.php:96 inc/vertycal-functions.php:98
+msgid "Please LogIn"
+msgstr ""
+
+#: inc/vertycal-functions.php:100
+msgid "LogIn"
+msgstr ""
+
+#: inc/vertycal-functions.php:170
+msgid "General"
+msgstr ""
+
+#: inc/vertycal-functions.php:268
+msgid "Schedule Updated Successfully"
+msgstr ""
+
+#: inc/vertycal-functions.php:291
+msgid "Please include a title of at least 2 characters"
+msgstr ""
+
+#: inc/vertycal-functions.php:294
+msgid "Please include a Date"
+msgstr ""
+
+#: inc/vertycal-functions.php:297
+msgid "Looks like there may have been an error"
+msgstr ""
+
+#: inc/vertycal-functions.php:331
+msgid "Your current IP Address is: "
+msgstr ""
+
+#: inc/vertycal-helpers.php:120
+msgid "Published: "
+msgstr ""
+
+#: inc/vertycal-template-actions.php:25
+msgid "Toggle Category List"
+msgstr ""
+
+#: inc/vertycal-template-actions.php:66 vertycal-cpt-init.php:15
+msgid "Add New"
+msgstr ""
+
+#: inc/vertycal-template-actions.php:69
+msgid "Options"
+msgstr ""
+
+#: templates/comments.php:11
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: templates/comments.php:43 templates/comments.php:44
+#: templates/vertycal-comments.php:78 templates/vertycal-comments.php:79
+msgid "Add Notes"
+msgstr ""
+
+#: templates/comments.php:47
+msgid "Add Notation"
+msgstr ""
+
+#: templates/scheduler-content.php:23
+msgid "Date / Time"
+msgstr ""
+
+#: templates/scheduler-content.php:27
+msgid "View / Who / Status"
+msgstr ""
+
+#: templates/scheduler-content.php:86 templates/scheduler.php:96
+msgid "Top"
+msgstr ""
+
+#: templates/scheduler-content.php:109
+msgid "No entries yet. Visit the form page to enter a new entry."
+msgstr ""
+
+#: templates/scheduler-new.php:5
+msgid "Note/Address/Contact"
+msgstr ""
+
+#: templates/scheduler-new.php:6
+msgid "Title/Event"
+msgstr ""
+
+#: templates/scheduler-new.php:9
+msgid "Categorize as: "
+msgstr ""
+
+#: templates/scheduler-new.php:10
+msgid "Select Category"
+msgstr ""
+
+#: templates/scheduler-new.php:52
+msgid "Save Entry"
+msgstr ""
+
+#: templates/scheduler-options.php:15
+msgid "The locale is: "
+msgstr ""
+
+#: templates/scheduler.php:67
+msgid "Add New entry"
+msgstr ""
+
+#: templates/scheduler.php:81
+msgid "Additional Information"
+msgstr ""
+
+#: templates/scheduler.php:95
+msgid "Top^"
+msgstr ""
+
+#: templates/single-vertycal.php:34
+msgid "Next"
+msgstr ""
+
+#: templates/single-vertycal.php:35
+msgid "Next post:"
+msgstr ""
+
+#: templates/single-vertycal.php:37
+msgid "Previous"
+msgstr ""
+
+#: templates/single-vertycal.php:38
+msgid "Previous post:"
+msgstr ""
+
+#: templates/single-vertycal.php:47
+msgid "Pages:"
+msgstr ""
+
+#: templates/single-vertycal.php:51
+msgid "Page"
+msgstr ""
+
+#: templates/single-vertycal_content.php:88
+msgid "mark complete"
+msgstr ""
+
+#: templates/single-vertycal_content.php:89
+msgid "fulfill"
+msgstr ""
+
+#: templates/single-vertycal_content.php:102
+msgid "I Attest to Marking Updated Status."
+msgstr ""
+
+#: templates/single-vertycal_content.php:114
+msgid "Back to Scheduler"
+msgstr ""
+
+#: templates/single-vertycal_content.php:119
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: templates/vertycal-comments.php:31
+#, php-format
+msgid "One note for &ldquo;%s&rdquo;"
+msgstr ""
+
+#: templates/vertycal-comments.php:72
+msgid "Notations empty"
+msgstr ""
+
+#: templates/vertycal-email-html.php:9
+msgid "Not Delivered Could not verify"
+msgstr ""
+
+#: templates/vertycal-email-html.php:98
+msgid "Delivered"
+msgstr ""
+
+#: templates/vertycal-email-html.php:102
+msgid "Not Delivered"
+msgstr ""
+
+#: vertycal-cpt-init.php:16
+msgid "Add New Schedule"
+msgstr ""
+
+#: vertycal-cpt-init.php:17
+msgid "Edit Schedule"
+msgstr ""
+
+#: vertycal-cpt-init.php:18
+msgid "New Schedule"
+msgstr ""
+
+#: vertycal-cpt-init.php:19
+msgid "All Schedules"
+msgstr ""
+
+#: vertycal-cpt-init.php:20
+msgid "View Schedule"
+msgstr ""
+
+#: vertycal-cpt-init.php:21
+msgid "Search Schedules"
+msgstr ""
+
+#: vertycal-cpt-init.php:22
+msgid "No schedules found"
+msgstr ""
+
+#: vertycal-cpt-init.php:23
+msgid "No schedules found in the Trash"
+msgstr ""
+
+#: vertycal-cpt-init.php:29
+msgid "Holds the Schedules and Schedule specific data"
+msgstr ""
+
+#: vertycal-cpt-init.php:46
+msgid "Schedules Categories"
+msgstr ""
+
+#: vertycal-cpt-init.php:47
+msgid "Schedule Category"
+msgstr ""
+
+#: vertycal-cpt-init.php:48
+msgid "Search Schedule Categories"
+msgstr ""
+
+#: vertycal-cpt-init.php:49
+msgid "All Schedule Categories"
+msgstr ""
+
+#: vertycal-cpt-init.php:50
+msgid "Parent Schedule Category"
+msgstr ""
+
+#: vertycal-cpt-init.php:51
+msgid "Parent Schedule Category:"
+msgstr ""
+
+#: vertycal-cpt-init.php:52
+msgid "Edit Schedule Category"
+msgstr ""
+
+#: vertycal-cpt-init.php:53
+msgid "Update Schedule Category"
+msgstr ""
+
+#: vertycal-cpt-init.php:54
+msgid "Add New Schedule Category"
+msgstr ""
+
+#: vertycal-cpt-init.php:55
+msgid "New Schedule Category"
+msgstr ""
+
+#: vertycal-cpt-init.php:56
+msgid "Schedule Categories"
+msgstr ""
+
+#: vertycal-cpt-init.php:70
+#, php-format
+msgid "Schedule updated. <a href=\"%s\">View Schedule</a>"
+msgstr ""
+
+#: vertycal-cpt-init.php:74
+msgid "Schedule updated."
+msgstr ""
+
+#: vertycal-cpt-init.php:75
+#, php-format
+msgid "Schedule restored to revision from %s"
+msgstr ""
+
+#: vertycal-cpt-init.php:77
+#, php-format
+msgid "Schedule published. <a href=\"%s\">View schedule</a>"
+msgstr ""
+
+#: vertycal-cpt-init.php:78
+msgid "Schedule saved."
+msgstr ""
+
+#: vertycal-cpt-init.php:79
+#, php-format
+msgid ""
+"Schedule submitted. <a target=\"_blank\" href=\"%s\">Preview Schedule</a>"
+msgstr ""
+
+#: vertycal-cpt-init.php:80
+#, php-format
+msgid ""
+"Schedule to be published: <strong>%1$s</strong>. <a target=\"_blank\" href="
+"\"%2$s\">Preview recipe</a>"
+msgstr ""
+
+#: vertycal-cpt-init.php:80
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: vertycal-cpt-init.php:82
+#, php-format
+msgid ""
+"Schedule draft updated. <a target=\"_blank\" href=\"%s\">Preview Schedule</a>"
+msgstr ""
+
+#: vertycal-init.php:22
+msgid ""
+"Thank you for adding this plugin! There is one requirement prior to using "
+"VertyCal: Please make a blank PAGE with named "
+msgstr ""
+
+#: vertycal-init.php:23 vertycal-init.php:24
+msgid "Sheduler"
+msgstr ""
