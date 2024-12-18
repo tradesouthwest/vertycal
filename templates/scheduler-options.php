@@ -16,13 +16,14 @@
  
     ?>
 
-<div class="vrtcl-docs">
-<?php 
+  <div class="vrtcl-docs">
+  <?php 
+  ob_start(); 
+  ?>
+  <hr> <?php echo wp_kses_post( vertycal_get_options_page_post() ); ?> <hr>
 
-ob_start(); 
-echo '<hr>' . vertycal_get_options_page_post(); '<hr>'; 
-echo ob_get_clean(); 
+      <?php  
+      echo ob_get_clean(); 
+      ?>
 
-?>
-
-</div>
+  </div>

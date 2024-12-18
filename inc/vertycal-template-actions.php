@@ -325,24 +325,31 @@ function vertycal_options_tab_footer_scripts()
     ?>
 
 <script id="vertycalOptionsClock">
-var $dOut = jQuery("#date"),
-    $hOut = jQuery("#hours"),
-    $mOut = jQuery("#minutes"),
-    $sOut = jQuery("#seconds"),
-    $ampmOut = jQuery("#ampm"),
-    months = <?php echo $trans_months; ?>,
-    days   = <?php echo $trans_days; ?>;
+var dOut = document.getElementById("date");
+var hOut = document.getElementById("hours");
+var mOut = document.getElementById("minutes");
+var sOut = document.getElementById("seconds");
+var ampmOut = document.getElementById("ampm");
+var months = <?php echo $trans_months; ?>;
+var days = <?php echo $trans_days; ?>;
 
 function update() {
-    var e = new Date,
-        t = e.getHours() < 12 ? "AM" : "PM",
-        u = 0 == e.getHours() ? 12 : e.getHours() > 12 ? e.getHours() - 12 : e.getHours(),
-        a = e.getMinutes() < 10 ? "0" + e.getMinutes() : e.getMinutes(),
-        r = e.getSeconds() < 10 ? "0" + e.getSeconds() : e.getSeconds(),
-        s = days[e.getDay()] + ", " + months[e.getMonth()] + " " + e.getDate() + ", " + e.getFullYear();
-    $dOut.text(s), $hOut.text(u), $mOut.text(a), $sOut.text(r), $ampmOut.text(t)
+  var e = new Date();
+  var t = e.getHours() < 12 ? "AM" : "PM";
+  var u = 0 === e.getHours() ? 12 : e.getHours() > 12 ? e.getHours() - 12 : e.getHours();
+  var a = e.getMinutes() < 10 ? "0" + e.getMinutes() : e.getMinutes();
+  var r = e.getSeconds() < 10 ? "0" + e.getSeconds() : e.getSeconds();
+  var s = days[e.getDay()] + ", " + months[e.getMonth()] + " " + e.getDate() + ", " + e.getFullYear();
+
+  dOut.textContent = s;
+  hOut.textContent = u;
+  mOut.textContent = a;
+  sOut.textContent = r;
+  ampmOut.textContent = t;
 }
-update(), window.setInterval(update, 1e3);
+
+update();
+window.setInterval(update, 1000);
 </script>
 
 <?php  // output clean html

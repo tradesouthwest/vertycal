@@ -240,7 +240,7 @@ function vertycal_admin_dashboard_widget_content()
 
     $defimg  =  plugin_dir_url( dirname(__FILE__) ) . 'prop/dashicon-256x256.png';
     $defvimg = '<img class="avatar" src="' . esc_url( $defimg ) . '" alt="logo" height="52" />';
-    $logoexists = '<img class="avatar" src="' . esc_url( $logofound[0] ) . '" alt="logo" height="52" />';
+    $logoexists = '<img class="avatar" src="' . esc_url( $logofound ) . '" alt="logo" height="52" />';
     if ( $logofound == '' ) 
          { $logovimg = $defvimg; }
     else { $logovimg = $logoexists; }

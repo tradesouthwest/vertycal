@@ -2,12 +2,14 @@
 if ( is_user_logged_in() && current_user_can( 'edit_posts' ) ) :  
 
 	$dateFormati18n = 'yy-mm-dd';
-	$labelexcerpt  = esc_html__( 'Note/Address/Contact', 'vertycal' );
-	$labeltitle   = esc_html__( 'Title/Event',  'vertycal' );
-	$labeldate   = esc_html__( 'Date', 'vertycal' );
-	$labeltime  = esc_html__( 'Time', 'vertycal' );
-	$labelcat  = esc_html__( 'Categorize as: ', 'vertycal' ); 
-	$defcat = ''; 
+	$labelexcerpt   = esc_html__( 'Notices', 'vertycal' );
+	$labeltitle     = esc_html__( 'Title/Event',  'vertycal' );
+	$labeldate      = esc_html__( 'Date', 'vertycal' );
+	$labeltime      = esc_html__( 'Time', 'vertycal' );
+	$labellocation  = esc_html__( 'Location', 'vertycal' );
+	$labelphone     = esc_html__( 'Phone', 'vertycal' ); 
+	$labelcat       = esc_html__( 'Categorize as: ', 'vertycal' ); 
+	$defcat         = ''; 
 	?>
 
 <div class="vrtcl-form-wrapper">
@@ -31,6 +33,18 @@ if ( is_user_logged_in() && current_user_can( 'edit_posts' ) ) :
 			<label for="vertycal_just_time_meta"><?php esc_html_e( $labeltime ); ?></label>
 			<input id="vertycal_just_time_meta" class="text_field" type="time" 
 			       value="" tabindex="4" name="vertycal_just_time_meta" />
+		</fieldset>
+
+		<fieldset class="field-content">
+			<label for="vertycal_location_meta"><?php esc_html_e( $labellocation ); ?></label>
+			<input id="vertycal_location_meta" class="text_field" type="text" 
+			       value="" tabindex="4" name="vertycal_location_meta" />
+		</fieldset>
+
+		<fieldset class="field-content">
+			<label for="vertycal_telephone_meta"><?php esc_html_e( $labelphone ); ?></label>
+			<input id="vertycal_telephone_meta" class="text_field" type="phone" 
+			       value="" tabindex="4" name="vertycal_telephone_meta" />
 		</fieldset>
 	
 		<fieldset class="field-content">

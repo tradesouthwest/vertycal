@@ -187,6 +187,14 @@ function vertycal_save_front_form_post()
 		$vertycal_just_time = ( empty( $_POST['vertycal_just_time_meta'] ) )
 					? '' : 
 					sanitize_text_field( $_POST['vertycal_just_time_meta'] );
+		//custom meta input
+		$vertycal_location = ( empty( $_POST['vertycal_location_meta'] ) )
+					? '' : 
+					sanitize_text_field( $_POST['vertycal_location_meta'] );
+		//custom meta input
+		$vertycal_telephone = ( empty( $_POST['vertycal_telephone_meta'] ) )
+					? '' : 
+					sanitize_text_field( $_POST['vertycal_telephone_meta'] );
 
 		if( !empty( $_POST['vertycal_excerpt'] ) ) 
 		{
@@ -218,6 +226,8 @@ function vertycal_save_front_form_post()
 		'meta_input'   => array(
 			'vertycal_date_time_meta' => wp_strip_all_tags( $vertycal_date_time ),
 			'vertycal_just_time_meta' => wp_strip_all_tags( $vertycal_just_time ),
+			'vertycal_location_meta'  => wp_strip_all_tags( $vertycal_location ),
+			'vertycal_telephone_meta' => wp_strip_all_tags( $vertycal_telephone ),
 			),
 			'tax_input' => array(
 				'vertycal_category' => sanitize_text_field( $vertycal_cat ),
@@ -244,8 +254,8 @@ function vertycal_save_front_form_post()
 				window.history.replaceState( null, null, window.location.href );
 			}</script>';
 
-			$vertycal_cat = $vertycal_excerpt = $title = $vertycal_date_time = 
-							$vertycal_just_time = $new_post = '';
+			$vertycal_cat = $vertycal_excerpt = $title = $vertycal_date_time = $vertycal_just_time = 
+			                $new_post = $vertycal_location = $vertycal_telephone = '';
 			$post_id      = null;
 
 			//wp_safe_redirect( 'http:'. $current_page .'#tab2' );
