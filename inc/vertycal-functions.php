@@ -97,7 +97,7 @@ function vertycal_user_login_link()
 	ob_start();
 	echo
 	'<h4>' . esc_html__( 'Please LogIn', 'vertycal' ) . '</h4>
-	<p><a href="' . wp_login_url( get_permalink() ) . '"
+	<p><a href="' . esc_url( wp_login_url( get_permalink() ) ) . '"
 		  title="' . esc_attr__( 'Please LogIn', 'vertycal' ) . '"
 		  class="vrtcl-btn btn btn-primary button button-primary">'
 		  . esc_html__( 'LogIn', 'vertycal' ) . '</a></p>';
@@ -145,7 +145,7 @@ function vertycal_display_thead()
 function vertycal_func_the_slug() 
 {
 	
-	$current_url="//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; 
+	$current_url="//".wp_unslash($_SERVER['HTTP_HOST']).wp_unslash($_SERVER['REQUEST_URI']); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 
 	return $current_url; 
 }
@@ -158,11 +158,11 @@ function vertycal_func_the_slug()
  * @param $vertycal_just_time string Custom metadata
  * @param $title uses the isset() language construct to check if 3rd array key is set
  * @validation | Only Title and Date are required to not throw an error
- *
  */
 function vertycal_save_front_form_post()
-{
-	$verify = wp_verify_nonce( $_REQUEST['vertycal_new_post_nonce'], 'vertycal_new_post_nonce'); 
+{   
+	if (!isset( $_REQUEST['vertycal_new_post_nonce'] ) ) return;
+	$verify = wp_verify_nonce( wp_unslash( esc_attr( $_REQUEST['vertycal_new_post_nonce'] ) ), 'vertycal_new_post_nonce'); 
     if ( !$verify ) { exit("No funny business please"); }
 	global $wpdb, $post;
 
@@ -178,7 +178,7 @@ function vertycal_save_front_form_post()
 		//title Sanitized in $new_post array()
 		$title = ( empty( $_POST['title'] ) ) 
 					? 'title_none' : 
-					sanitize_title( $_POST['title'] );
+					sanitize_title( wp_unslash( $_POST['title'] ) );
 		//custom meta input
 		$vertycal_date_time = ( empty( $_POST['vertycal_date_time_meta'] ) )
 		          	? 'date_none' :
