@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {	exit; } // exit if file is called directly
 
         add_submenu_page(
             'edit.php?post_type=vertycal',
-            __( 'VertyCal Options Settings' ),
-            __( 'VertyCal Settings '),
+            __( 'VertyCal Options Settings', 'vertycal' ),
+            __( 'VertyCal Settings', 'vertycal' ),
             'manage_options',
             'vertycal',
             'vertycal_display_settings_page',
@@ -141,7 +141,7 @@ function vertycal_register_admin_options()
             'tip'         => esc_attr__( 'Enter email address to where you want to receive the notice that will represent a completed task.', 
                                          'vertycal' ),
             'default'     => get_option( 'admin_email' ),
-            'placeholder' => esc_attr__( '', 'vertycal' )   
+            'placeholder' => esc_attr__( 'email', 'vertycal' )
         ) 
     );     
      // c.4.) margin setting option
@@ -377,7 +377,7 @@ function vertycal_whosees_what_cb($args)
     $vcontpg = ( empty ( $options['vertycal_whosees_what'] ) ) 
                ? 'single' : $options['vertycal_whosees_what'];
     ?>
-    <fieldset><b class="vrttip" data-title=<?php print( $args['tip'] ); ?>">?</b><sup>13</sup>
+    <fieldset><b class="vrttip" data-title=<?php echo esc_attr( ( $args['tip'] ) ); ?>">?</b><sup>13</sup>
     <label class="olmin"><?php esc_html_e( 'What Content to make Public', 'vertycal' ); ?></label>
     <select name = "vertycal_options[vertycal_whosees_what]" id="vcontpg">
         <option value="all"    <?php selected( 'all', $vcontpg ); ?> 
@@ -417,13 +417,13 @@ function vertycal_public_page_post_cb($args)
     <input id="%1$s" class="regular-text" type="%2$s" 
     name="%3$s[%1$s]" value="%4$s" placeholder="%5$s"/><br>
     <span class="vmarg">%6$s </span></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['placeholder'],
-        $args['description'],
-        $args['tip']
+        esc_attr( $args['name'] ),
+        esc_attr( $args['type'] ),
+        esc_attr( $args['option_name'] ),
+        esc_attr( $args['value'] ),
+        esc_attr( $args['placeholder'] ),
+        esc_attr( $args['description'] ),
+        esc_attr( $args['tip'] )
     );
 }
 
@@ -438,12 +438,12 @@ function vertycal_text_field_0_render($args)
     <input id="%1$s" class="regular-text" type="%2$s" 
     name="%3$s[%1$s]" value="%4$s" /><br>
     <span class="vmarg">%5$s </span></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] )
     );
 }
 
@@ -458,13 +458,13 @@ function vertycal_text_field_1_render($args)
     <input id="%1$s" class="regular-text" type="%2$s" 
     name="%3$s[%1$s]" value="%4$s" /><br>
     <span class="vmarg">%5$s <small> %7$s</small></span></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip'],
-        $args['sub_text']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] ),
+    esc_attr( $args['sub_text'] )
     );
 }
 /** 
@@ -478,12 +478,12 @@ function vertycal_email_field_1_render($args)
     <input id="%1$s" class="regular-text" type="%2$s" 
     name="%3$s[%1$s]" value="%4$s" /><br>
     <span class="vmarg">%5$s </span></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] )
     );
 }
 /** 
@@ -497,12 +497,12 @@ function vertycal_text_field_2_render($args)
     <input id="%1$s" class="regular-text" type="%2$s" 
     name="%3$s[%1$s]" value="%4$s" /><br>
     <span class="vmarg">%5$s </span></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] )
     );
 }
 /** 
@@ -516,12 +516,12 @@ function vertycal_font_field_1_render($args)
     <input id="%1$s" class="regular-text" type="%2$s" 
     name="%3$s[%1$s]" value="%4$s" /><br>
     <span class="vmarg">%5$s </span></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] )
     );
 }
 /** 
@@ -536,13 +536,13 @@ function vertycal_users_caps_render($args)
     <input id="%1$s" type="%2$s" name="%3$s[%1$s]" value="1"  
     class="regular-checkbox" %7$s /><br>
     <span class="vmarg">%5$s </span><em> = %4$s</em></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip'],
-        $args['checked']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] ),
+    esc_attr( $args['checked'] )
     );
 }
 
@@ -558,13 +558,13 @@ function vertycal_checkbox_markdone_render($args)
     <input id="%1$s" type="%2$s" name="%3$s[%1$s]" value="1"  
     class="regular-checkbox" %7$s /><br>
     <span class="vmarg">%5$s </span><em> = %4$s</em></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip'],
-        $args['checked']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] ),
+    esc_attr( $args['checked'] )
     );
 }
 
@@ -580,13 +580,13 @@ function vertycal_checkbox_linkview_render($args)
     <input id="%1$s" type="%2$s" name="%3$s[%1$s]" value="1"  
     class="regular-checkbox" %7$s /><br>
     <span class="vmarg">%5$s </span><em> = %4$s</em></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip'],
-        $args['checked']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] ),
+    esc_attr( $args['checked'] )
     );
 }
 
@@ -602,13 +602,13 @@ function vertycal_checkbox_showyear_render($args)
     <input id="%1$s" type="%2$s" name="%3$s[%1$s]" value="1"  
     class="regular-checkbox" %7$s /><br>
     <span class="vmarg">%5$s </span><em> = %4$s</em></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip'],
-        $args['checked']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] ),
+    esc_attr( $args['checked'] )
     );
 }
 
@@ -625,13 +625,13 @@ function vertycal_dashnews_widgetcheck_cb($args)
     <input id="%1$s" type="%2$s" name="%3$s[%1$s]" value="1"  
     class="regular-checkbox" %7$s /><br>
     <span class="vmarg">%5$s </span><em> = %4$s</em></fieldset>',
-        $args['name'],
-        $args['type'],
-        $args['option_name'],
-        $args['value'],
-        $args['description'],
-        $args['tip'],
-        $args['checked']
+    esc_attr( $args['name'] ),
+    esc_attr( $args['type'] ),
+    esc_attr( $args['option_name'] ),
+    esc_attr( $args['value'] ),
+    esc_attr( $args['description'] ),
+    esc_attr( $args['tip'] ),
+    esc_attr( $args['checked'] )
     );
 }     
 /**
@@ -649,15 +649,15 @@ function vertycal_color_field_1_cb($args)
         <input type="%2$s" name="%3$s[%4$s]" value="%5$s" 
         class="%6$s vertycal-color-picker-1" id="%3$s-%4$s"
          data-default-color="%8$s"/> </fieldset>',
-        $args['label'],
-        $args['type'],
-        $args['option_name'],
-        $args['name'],        
-        $args['value'],
-        $args['class'],
-        $args['description'],
-        $args['default'],
-        $args['tip']
+         esc_attr( $args['label'] ),
+         esc_attr( $args['type'] ),
+         esc_attr( $args['option_name'] ),
+         esc_attr( $args['name'] ),        
+         esc_attr( $args['value'] ),
+         esc_attr( $args['class'] ),
+         esc_attr( $args['description'] ),
+         esc_attr( $args['default'] ),
+         esc_attr( $args['tip'] )
     ); 
 }
 /**
@@ -675,15 +675,15 @@ function vertycal_color_field_2_cb($args)
         <input type="%2$s" name="%3$s[%4$s]" value="%5$s" 
         class="%6$s vertycal-color-picker-2" id="%3$s-%4$s"
          data-default-color="%8$s"/> </fieldset>',
-        $args['label'],
-        $args['type'],
-        $args['option_name'],
-        $args['name'],        
-        $args['value'],
-        $args['class'],
-        $args['description'],
-        $args['default'],
-        $args['tip']
+        esc_attr( $args['label'] ),
+        esc_attr( $args['type'] ),
+        esc_attr( $args['option_name'] ),
+        esc_attr( $args['name'] ),        
+        esc_attr( $args['value'] ),
+        esc_attr( $args['class'] ),
+        esc_attr( $args['description'] ),
+        esc_attr( $args['default'] ),
+        esc_attr( $args['tip'] )
     ); 
 }
 /**
@@ -701,15 +701,15 @@ function vertycal_color_field_3_cb($args)
         <input type="%2$s" name="%3$s[%4$s]" value="%5$s" 
         class="%6$s vertycal-color-picker-3" id="%3$s-%4$s"
          data-default-color="%8$s"/> </fieldset>',
-        $args['label'],
-        $args['type'],
-        $args['option_name'],
-        $args['name'],        
-        $args['value'],
-        $args['class'],
-        $args['description'],
-        $args['default'],
-        $args['tip']
+        esc_attr( $args['label'] ),
+        esc_attr( $args['type'] ),
+        esc_attr( $args['option_name'] ),
+        esc_attr( $args['name'] ),        
+        esc_attr( $args['value'] ),
+        esc_attr( $args['class'] ),
+        esc_attr( $args['description'] ),
+        esc_attr( $args['default'] ),
+        esc_attr( $args['tip'] )
     ); 
 }
 /** 
@@ -843,14 +843,14 @@ echo '<div class="vrtcl-wrap-docs"><h3>' . esc_html__( 'FAQ - Get more informati
     
     $html = ob_get_clean();
     
-        echo $html;
+        echo wp_kses_post( $html );
 } 
 
 //callback for description of document section
 function vertycal_docs_settings_section_callback()
 {
     printf( '<h4>%s</h4>', 
-        __( 'Plugin Help: ', 'vertycal' ) 
+        esc_html__( 'Plugin Help: ', 'vertycal' ) 
     );
 }
 
@@ -859,8 +859,8 @@ function vertycal_options_settings_section_callback()
 {
     printf( '<p><img src="%sprop/bezeledicon.png" alt="plugin logo" height="50"/>
     <small class="vrtcl-block">Ver. %s</small></p>',
-    VERTYCAL_URL,
-    VERTYCAL_VER 
+    esc_attr( VERTYCAL_URL ),
+    esc_attr( VERTYCAL_VER ) 
 );
     printf( '<p>%s <b class="vrttip active" data-title="Oh my you did it">?</b> %s</p>',
          esc_html__( 'For more information hover over the tips icon.', 'vertycal' ),
@@ -875,7 +875,7 @@ function vertycal_display_settings_page()
 	// check if user is allowed access
     if ( ! current_user_can( 'manage_options' ) ) return;
     
-    $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'vertycal_options';
+    $active_tab = null!== wp_unslash( $_GET[ 'tab' ] ) ? wp_unslash( $_GET[ 'tab' ] ) : 'vertycal_options';
 	?>
 
 	<div id="vrtclWrap" class="wrap">

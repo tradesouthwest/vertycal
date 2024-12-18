@@ -19,13 +19,13 @@ function vertycal_edit_scheduled_columns( $columns )
 {
 
 	$columns = array(
-		'cb'    => '<input type="checkbox" />',
-		'title' => __( 'Scheduled' ),
-		'vertycal_date_time_meta' => __( 'Date' ),
-		'vertycal_just_time_meta' => __( 'Time' ),
-        'vertycal_mark_done_meta' => __( 'Status' ),
-        'author'                  => __( 'Person' ),
-        'date'  => __( 'Published On' )
+		'cb'                    => '<input type="checkbox" />',
+		'title'                  => __( 'Scheduled', 'vertycal' ),
+		'vertycal_date_time_meta' => __( 'Date', 'vertycal' ),
+		'vertycal_just_time_meta' => __( 'Time', 'vertycal' ),
+        'vertycal_mark_done_meta' => __( 'Status', 'vertycal' ),
+        'author'                 => __( 'Person', 'vertycal' ),
+        'date'                  => __( 'Published On', 'vertycal' )
 	);
 
 	return $columns;
@@ -62,7 +62,7 @@ function vertycal_manage_scheduled_columns( $column, $post_id )
         case 'vertycal_date_time_meta' : 
             $date_time_meta = get_post_meta( $post_id, 'vertycal_date_time_meta', true );
             if ( empty( $date_time_meta ) )
-                    echo __( 'Not Set', 'vertycal' );
+                    echo esc_html__( 'Not Set', 'vertycal' );
                     else 
                     echo esc_attr( $date_time_meta );
         break;
@@ -70,7 +70,7 @@ function vertycal_manage_scheduled_columns( $column, $post_id )
         case 'vertycal_just_time_meta' : 
             $just_time_meta = get_post_meta( $post_id, 'vertycal_just_time_meta', true );
             if ( empty( $just_time_meta ) )
-                    echo __( 'Not Set', 'vertycal' );
+                    echo esc_html__( 'Not Set', 'vertycal' );
                     else 
                     echo esc_attr( $just_time_meta );
         break;
@@ -78,7 +78,7 @@ function vertycal_manage_scheduled_columns( $column, $post_id )
         case 'vertycal_mark_done_meta' : 
             $mark_done_meta = get_post_meta( $post_id, 'vertycal_mark_done_meta', true );
             if ( empty( $mark_done_meta ) )
-                    echo __( 'Not Set', 'vertycal' );
+                    echo esc_html__( 'Not Set', 'vertycal' );
                     else 
                     echo esc_attr( $mark_done_meta );
         break;
@@ -108,7 +108,7 @@ function vertycal_manage_scheduled_columns( $column, $post_id )
                     );
 				}
 				/* Join the terms, separating them with a comma. */
-				echo join( ', ', $out );
+				echo join( ', ', wp_kses_post( $out ) );
             }
                 else {
                     esc_attr_e( 'Open', 'vertycal' );
@@ -213,7 +213,7 @@ function vertycal_add_custom_dashboard_widgets()
 
     wp_add_dashboard_widget(
         'vertycal_dashboard_widget',                            
-	    __( ' Personal Dashboard' ) . $wnshort_ip,
+	    __( ' Personal Dashboard', 'vertycal' ) . $wnshort_ip,
 	    'vertycal_admin_dashboard_widget_content' // Display function.
 	);
 }
@@ -246,27 +246,27 @@ function vertycal_admin_dashboard_widget_content()
     else { $logovimg = $logoexists; }
 
     echo '
-        <h4>' . get_bloginfo( 'name' ) . '</h4>
-        <span>' . force_balance_tags(do_shortcode( "[vertycal_dateinadmin]" )) . '</span>
+        <h4>' . esc_attr( get_bloginfo( 'name' ) ) . '</h4>
+        <span>' . force_balance_tags( do_shortcode( "[vertycal_dateinadmin]" )) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        . '</span> 
         <div class="vrtcl-dashbrd">
         
         <figure class="vrtcl-dashlogo">
-            <p>' . $logovimg . '</p>
+            <p>' . wp_kses_post( $logovimg ) . '</p>
         </figure>
     <strong>' . esc_html__( 'Current Items: ', 'vertycal' ) . '<span>' 
-    . vertycal_count_open_items($current_user->ID) . '</span></strong><br>'
-    . esc_html__( 'User first name: ', 'vertycal' )   . $current_user->user_firstname . '<br>'
-    . esc_html__( 'User last name: ',   'vertycal' )  . $current_user->user_lastname . '<br>'
-    . esc_html__( 'User display name: ', 'vertycal' ) . $current_user->display_name . '<br>'
-    . esc_html__( 'Username:  ', 'vertycal' ) . $current_user->user_login  . '<br>'
-    . esc_html__( 'User email: ', 'vertycal' ) . $current_user->user_email . '<br>
-
+    . esc_attr( vertycal_count_open_items( $current_user->ID ) ) . '</span></strong><br>'
+    . esc_html__( 'User first name: ', 'vertycal' )   . esc_html( $current_user->user_firstname ) . '<br>'
+    . esc_html__( 'User last name: ',   'vertycal' )  . esc_html( $current_user->user_lastname ) . '<br>'
+    . esc_html__( 'User display name: ', 'vertycal' ) . esc_html( $current_user->display_name ) . '<br>'
+    . esc_html__( 'Username:  ', 'vertycal' ) . esc_html( $current_user->user_login ) . '<br>'
+    . esc_html__( 'User email: ', 'vertycal' ) . esc_html( $current_user->user_email ) . '<br>
         </div>
         <p><b>' . esc_html__( 'Visit your Profile page to update any changes.', 'vertycal' ) 
         . '</b> <a href="' . get_edit_user_link() . '" class="button">' 
         . esc_html__( 'My Profile', 'vertycal' ) . '</a></p>';
 
-        echo vertycal_find_author_info( $current_user->ID );
+        echo vertycal_find_author_info( esc_html( $current_user->ID ) );
 
 } 
 /**
@@ -317,7 +317,7 @@ function vertycal_find_author_info( $current_user='' )
 
         endwhile;
 
-        wp_reset_query();
+        wp_reset_postdata();
        
     endif; 
         $html .= '
@@ -382,12 +382,12 @@ function vertycal_editor_gettext( $translation, $original, $typenow )
 	if ( vertycal_is_edit_page( array( 'edit', 'new' ) ) && "vertycal" == $typenow )
 	{
 		if ( 'Excerpt' == $original ) {
-			return esc_html__( 'Sheduler notes' );
+			return esc_html__( 'Sheduler notes', 'vertycal' );
 		} else {
 			$pos = strpos( $original,
 						   'Excerpts are optional hand-crafted summaries of your' );
 			if ( $pos !== false) {
-				return  esc_html__( 'Notes show on calendar and are truncated to fit the agenda window.' );
+				return  esc_html__( 'Notes show on calendar and are truncated to fit the agenda window.', 'vertycal' );
 			}
 		}
 	}
@@ -432,6 +432,6 @@ function vertycal_options_getter_checkbox( $opt_name, $default )
 
     $value = ( empty( get_option('vertycal_options')['"' . $opt_name . '"'] ) ) 
             ? $default : get_option('vertycal_options')['"' . $opt_name . '"'];
-        echo $value;
+        echo esc_attr( $value );
 }
 

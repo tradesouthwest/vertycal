@@ -82,7 +82,7 @@ function vertycal_filter_users_own_attachments( $wp_query_obj )
     if( !current_user_can('delete_pages') )
         $wp_query_obj->set('author', $current_user->ID );
 
-    return;
+    //return;
 }
 	
 /**
@@ -113,13 +113,14 @@ function vertycal_get_posts_for_current_author( $query )
 add_filter('parse_query', 'vertycal_filter_author_posts_query' );
 function vertycal_filter_author_posts_query( $wp_query ) 
 {
-
-    if ( strpos( $_SERVER[ 'REQUEST_URI' ], '/wp-admin/edit.php' ) !== false ) 
-    {
-        if ( !current_user_can( 'update_core' ) ) {
-            //global $current_user;
-            $current_user = new WP_User(get_current_user());
-            $wp_query->set( 'author', $current_user->ID );
-        }
-    } 
+    if ( isset ( $_SERVER[ 'REQUEST_URI' ] ) ) {
+        if ( strpos( esc_url_raw( wp_unslash( $_SERVER[ 'REQUEST_URI' ] ), '/wp-admin/edit.php' ) ) !== false ) 
+        {
+            if ( !current_user_can( 'update_core' ) ) {
+                //global $current_user;
+                $current_user = new WP_User(get_current_user());
+                $wp_query->set( 'author', $current_user->ID );
+            }
+        } 
+    }
 } 
