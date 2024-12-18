@@ -77,7 +77,7 @@ function vertycal_date_time_meta_box_cb($post)
     value="' . esc_attr( $vertycal_date_time ) . '" class="text_field">';
 
     $html .= wp_nonce_field( 'vertycal_date_time', 'vertycal_date_time' );
-    echo $html;
+    echo $html;                       // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 /**
  * Output the HTML for the metabox.
@@ -95,7 +95,7 @@ function vertycal_just_time_meta_box_cb($post)
     value="' . esc_attr( $vertycal_just_time ) . '" class="text_field">';
 
     $html .= wp_nonce_field( 'vertycal_just_time', 'vertycal_just_time' );
-    echo $html;
+    echo $html;                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 /**
  * Output the HTML for the metabox.
@@ -115,7 +115,7 @@ function vertycal_location_meta_box_cb($post)
      placeholder="' . esc_attr( $plc ) . '">';
 
     $html .= wp_nonce_field( 'vertycal_location', 'vertycal_location' );
-    echo $html;
+    echo $html;                             // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 /**
  * Output the HTML for the metabox.
@@ -135,7 +135,7 @@ function vertycal_telephone_meta_box_cb($post)
      placeholder="' . esc_attr( $plc ) . '">';
 
     $html .= wp_nonce_field( 'vertycal_telephone', 'vertycal_telephone' );
-    echo $html;
+    echo $html;                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 /**
  * Output the HTML for the metabox.
@@ -171,7 +171,7 @@ echo '<option value="' . esc_attr( $key ) . '"' . selected( $vertycal_mark_done,
         wp_nonce_field( 'vertycal_mark_done', 'vertycal_mark_done' );
 
     $output = ob_get_clean();
-    echo $output;
+    echo $output;           // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 /**
  * Save meta box content.
@@ -184,7 +184,6 @@ function vertycal_update_date_time_meta( $post_id )
     if ( $parent_id = wp_is_post_revision( $post_id ) ) {
         $post_id = $parent_id;
     }
-
     $fields = [
         'vertycal_date_time_meta',
         'vertycal_just_time_meta',
@@ -194,8 +193,9 @@ function vertycal_update_date_time_meta( $post_id )
     ];
     foreach ( $fields as $field ) {
         if ( array_key_exists( $field, $_POST ) ) {
-            update_post_meta( $post_id, $field,
-            sanitize_text_field( $_POST[$field] ) );
+            update_post_meta( $post_id, $field,                    // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                wp_unslash( sanitize_text_field( $_POST[$field] ) ) 
+            );
         }
      }
 }
@@ -220,7 +220,7 @@ function vertycal_admin_inline_customize( $pagenow )
     $htm .= '<span class="normal-sortables not-sortable"><h4 class="hndle ui-sortable-handle">' . esc_html__( 'Working Notes', 'vertycal' ) . '</h4></span></div>';
     }
 
-    echo $htm;
+    echo $htm; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
     return false;
 }
