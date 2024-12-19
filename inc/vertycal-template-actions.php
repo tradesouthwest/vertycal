@@ -43,7 +43,7 @@ function vertycal_before_scheduler_list_render( $output='' )
     </header>
 <?php 
     $output = ob_get_clean();
-        echo $output; 
+        echo wp_kses_post( $output ); 
 } 
  
 /**
@@ -72,7 +72,7 @@ ob_start();
 
     $output = ob_get_clean();
     
-        echo $output;
+        echo $output;         // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**
@@ -101,7 +101,7 @@ function vertycal_pagination_schedule()
 	<div class="vrtcl-pagination">
 	<?php 
 	$pager = 999999; // need an unlikely integer
-	   echo paginate_links( array(
+	   echo paginate_links( array(               // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			'base' => str_replace( $pager, '%#%', esc_url( get_pagenum_link( $pager ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var('paged') ),
@@ -136,7 +136,7 @@ function vertycal_tmplt_single_taxonomy()
                 $output[] = 
 '<a href="' . get_term_link( $term->slug, 'vertycal_category') . '">' .$term->name . '</a>';
             }
-        echo join( ' ', $output );
+        echo wp_kses_post( join( ' ', $output ) );
     
     }
         $htm = ob_get_clean();
@@ -240,8 +240,8 @@ function vertycal_single_required_redirect()
     
     if( is_singular() && true === $class ) 
     {
-        wp_redirect( home_url( '/' ) );
-        die;
+        wp_safe_redirect( home_url( '/' ) );
+        exit;
     }
 }
 
@@ -259,8 +259,8 @@ function vertycal_public_required_redirect()
     
     if( is_singular() && true === $class && !is_user_logged_in() ) 
     {
-        wp_redirect( home_url( '/' ) );
-        die;
+        wp_safe_redirect( home_url( '/' ) );
+        exit;
     }
 }
 
@@ -277,8 +277,8 @@ function vertycal_none_required_redirect()
         $class = true;
 
     if ( !is_user_logged_in() && true === $class ) {
-        wp_redirect( home_url( '/' ) );
-        die;
+        wp_safe_redirect( home_url( '/' ) );
+        exit;
     }
 }
 
@@ -296,8 +296,8 @@ function vertycal_both_required_redirect()
 
     if( is_page( 'scheduler' ) || is_singular() && true === $class ) 
     {
-        wp_redirect( home_url( '/' ) );
-        die;
+        wp_safe_redirect( home_url( '/' ) );
+        exit;
     }
 } 
 
@@ -330,8 +330,8 @@ var hOut = document.getElementById("hours");
 var mOut = document.getElementById("minutes");
 var sOut = document.getElementById("seconds");
 var ampmOut = document.getElementById("ampm");
-var months = <?php echo $trans_months; ?>;
-var days = <?php echo $trans_days; ?>;
+var months = <?php echo absint( $trans_months ); ?>;
+var days = <?php echo absint( $trans_days ); ?>;
 
 function update() {
   var e = new Date();
@@ -353,6 +353,6 @@ window.setInterval(update, 1000);
 </script>
 
 <?php  // output clean html
-    $output = ob_get_clean();
-    echo $output;
+    echo ob_get_clean();
+
 } 

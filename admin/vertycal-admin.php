@@ -263,16 +263,16 @@ function vertycal_admin_dashboard_widget_content()
     . esc_html__( 'User email: ', 'vertycal' ) . esc_html( $current_user->user_email ) . '<br>
         </div>
         <p><b>' . esc_html__( 'Visit your Profile page to update any changes.', 'vertycal' ) 
-        . '</b> <a href="' . get_edit_user_link() . '" class="button">' 
+        . '</b> <a href="' . esc_url( get_edit_user_link() ) . '" class="button">' 
         . esc_html__( 'My Profile', 'vertycal' ) . '</a></p>';
 
-        echo vertycal_find_author_info( esc_html( $current_user->ID ) );
+        echo wp_kses_post( vertycal_find_author_info( absint( $current_user->ID ) ) );
 
 } 
 /**
  * Get author post info
  * 
- * @since 1.0.0
+ * @since 1.0.1
  * @param array $args {
  *     Uses wp query variables.
  *
@@ -292,7 +292,7 @@ function vertycal_find_author_info( $current_user='' )
         'post_status' => array( 'publish', 'pending' ),
         'order'       =>  'ASC',
         'orderby'     => 'meta_value',
-        'meta_key'    => 'vertycal_date_time_meta',
+        'meta_key'    => 'vertycal_date_time_meta',     // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
         );
 
     $html ='';

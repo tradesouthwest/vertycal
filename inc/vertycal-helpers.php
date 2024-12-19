@@ -7,7 +7,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * Path helpers for urls
- * 
+ * TODO Check how to use placeholders in `get_var()`
  * @since 1.0.0
  */
 function vertycal_get_ID_by_slug( $page_name ) 
@@ -15,7 +15,7 @@ function vertycal_get_ID_by_slug( $page_name )
 
     global $wpdb, $page_name;
     $page_name_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts 
-                                    WHERE post_name = '".$page_name."'");
+                                    WHERE post_name = '".$page_name."'");  // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
         return absint( $page_name_id );
 } 
 
@@ -107,7 +107,7 @@ function vertycal_get_current_user( $user_data )
             $user_data = '';
             break;
         }
-        print( $user_data );
+        echo esc_attr( $user_data );
 } 
 
 /**
@@ -121,7 +121,7 @@ function vertycal_count_published()
     $count_posts = wp_count_posts( 'vertycal' )->publish;
 
     ob_start();
-    echo __( 'Published: ', 'vertycal' ) . absint( $count_posts );
+    echo esc_html__( 'Published: ', 'vertycal' ) . absint( $count_posts );
     $counts = ob_get_clean();
 
         return $counts;

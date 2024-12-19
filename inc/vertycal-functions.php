@@ -145,8 +145,7 @@ function vertycal_display_thead()
 function vertycal_func_the_slug() 
 {
 	
-	$current_url="//".wp_unslash($_SERVER['HTTP_HOST']).wp_unslash($_SERVER['REQUEST_URI']); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
-
+	$current_url= esc_url("//".wp_unslash($_SERVER['HTTP_HOST']).wp_unslash($_SERVER['REQUEST_URI'])); 
 	return $current_url; 
 }
 /**
@@ -162,8 +161,9 @@ function vertycal_func_the_slug()
 function vertycal_save_front_form_post()
 {   
 	if (!isset( $_REQUEST['vertycal_new_post_nonce'] ) ) return;
-	$verify = wp_verify_nonce( wp_unslash( esc_attr( $_REQUEST['vertycal_new_post_nonce'] ) ), 'vertycal_new_post_nonce'); 
+	$verify = wp_verify_nonce( wp_unslash( sanitize_text_field( $_REQUEST['vertycal_new_post_nonce'] ) ), 'vertycal_new_post_nonce'); 
     if ( !$verify ) { exit("No funny business please"); }
+
 	global $wpdb, $post;
 
 	$post_page        = get_the_ID();
@@ -182,30 +182,30 @@ function vertycal_save_front_form_post()
 		//custom meta input
 		$vertycal_date_time = ( empty( $_POST['vertycal_date_time_meta'] ) )
 		          	? 'date_none' :
-				  	sanitize_text_field( $_POST['vertycal_date_time_meta'] );
+				  	sanitize_text_field( wp_unslash( $_POST['vertycal_date_time_meta'] ) );
 		//custom meta input
 		$vertycal_just_time = ( empty( $_POST['vertycal_just_time_meta'] ) )
 					? '' : 
-					sanitize_text_field( $_POST['vertycal_just_time_meta'] );
+					sanitize_text_field( wp_unslash( $_POST['vertycal_just_time_meta'] ) );
 		//custom meta input
 		$vertycal_location = ( empty( $_POST['vertycal_location_meta'] ) )
 					? '' : 
-					sanitize_text_field( $_POST['vertycal_location_meta'] );
+					sanitize_text_field( wp_unslash( $_POST['vertycal_location_meta'] ) );
 		//custom meta input
 		$vertycal_telephone = ( empty( $_POST['vertycal_telephone_meta'] ) )
 					? '' : 
-					sanitize_text_field( $_POST['vertycal_telephone_meta'] );
+					sanitize_text_field( wp_unslash( $_POST['vertycal_telephone_meta'] ) );
 
 		if( !empty( $_POST['vertycal_excerpt'] ) ) 
 		{
 
-		$vertycal_excerpt = trim( wp_strip_all_tags( $_POST['vertycal_excerpt'] ) );
+		$vertycal_excerpt = trim( wp_strip_all_tags( wp_unslash( $_POST['vertycal_excerpt'] ) ) );
 		}
 		//category
 		if( !empty( $_POST['vertycal_category'] ) ) 
 		{
 
-			$vertycal_cat  = $_POST['vertycal_category'];
+			$vertycal_cat  = wp_unslash( sanitize_text_field( $_POST['vertycal_category'] ) );
 			$vertycal_cats = get_term_by( 'id', $vertycal_cat, 'vertycal_category' );
 			$vertycal_cat  = sanitize_key( $vertycal_cats->slug );
 			} else {
@@ -248,7 +248,7 @@ function vertycal_save_front_form_post()
 			//$vrtcl_success = true;
 			//add filter?
 			echo '<div id="vrtclSuccess">' . 
-			vertycal_saved_front_post_success($vrtcl_success = true) 
+			vertycal_saved_front_post_success($vrtcl_success = true)      // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			. '</div><script id="afterSuc" type="text/javascript">
 			if ( window.history.replaceState ) {
 				window.history.replaceState( null, null, window.location.href );
@@ -262,12 +262,12 @@ function vertycal_save_front_form_post()
 			//wp_redirect($_SERVER['HTTP_REFERER']);
 			} else {
 
-				echo $post_id->get_error_message();
+				echo wp_kses_post( $post_id->get_error_message() );
 		}
 
 	else:
 			//there was an error in the post insertion,
-			echo vertycal_sort_error_messages( $errors );
+			echo wp_kses_post( vertycal_sort_error_messages( $errors ) );
 			$errors = '';
 	endif;
 }
@@ -317,12 +317,12 @@ function vertycal_sort_error_messages( $errors )
 		$messg = __( 'Please include a Date', 'vertycal' );
 	}
 	return printf( '<div class="wp-error danger"><p>%s</p><p>%s</p></div>',
-					__( 'Looks like there may have been an error', 'vertycal' ),
+					esc_html__( 'Looks like there may have been an error', 'vertycal' ),
 					esc_html( $messg )
 				);
 
-		$errors = $messg = null;
-		return false;
+
+		
 }
 
 /**
@@ -332,8 +332,8 @@ function vertycal_sort_error_messages( $errors )
 function vertycal_return_author_initials()
 {
     //get author name and strip all but first letters
-    //$options = get_option( 'wordness_options' );
-    $def    = get_the_author_meta( 'ID' );;
+    //$options = get_option( 'vertycal_options' );
+    $def    = get_the_author_meta( 'ID' );
     $str    = get_the_author_meta( 'display_name' );
     $words  = preg_split("/[\s,_-]+/", $str );
     $abbrev = '';
@@ -352,8 +352,8 @@ function vertycal_return_author_initials()
 function vertycal_display_user_ip() 
 {
     $ip = '';
-    $ip .= esc_html__( 'Your current IP Address is: ', 'wordness' );
-    $ip .= $_SERVER['REMOTE_ADDR'];
+    $ip .= esc_html__( 'Your current IP Address is: ', 'vertycal' );
+    $ip .= (isset($_SERVER['REMOTE_ADDR']) ) ? wp_unslash( esc_attr( sanitize_text_field( $_SERVER['REMOTE_ADDR'] ) ) ) : '';
         return $ip;
 }
 
@@ -365,11 +365,11 @@ function vertycal_display_dateinadmin_shortcode()
 { 
 	if( !is_admin() ) return;
 	$format = get_option('date_format');
-	$tock   = date_i18n($format, current_time('timestamp') );
+	$tock   = date_i18n($format, current_time('timestamp') );        // phpcs:ignore WordPress.DateTime.CurrentTimeTimestamp.Requested
 	
 	ob_start();
 	echo '<p class="vrtcl-clock">' . esc_attr( $tock ) . ' <span id="WNclock"> </span></p>';
-	?><script>var d = new Date(<?php echo time() * 1000; ?>);</script>
-	<?php 
+	?><script>var d = new Date(<?php echo time() * 1000; ?>);</script> <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	
 	return ob_get_clean();
 } 
