@@ -141,12 +141,13 @@ function vertycal_display_thead()
 
 	return $form_title;
 }
-
+// get slug function
 function vertycal_func_the_slug() 
 {
 	if (!isset($_SERVER['REQUEST_URI'])) return;
-	$current_url = esc_url( "//". sanitize_text_field(wp_unslash( $_SERVER['HTTP_HOST'] ))
-	. sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] )) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
+	$shsh        = wp_unslash( $_SERVER['HTTP_HOST'] );
+	$srsr        = wp_unslash( $_SERVER['REQUEST_URI'] );
+	$current_url = esc_url( "//". sanitize_text_field( $shsh ). sanitize_text_field( $srsr )) ); 
 	return $current_url; 
 }
 /**

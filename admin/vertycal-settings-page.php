@@ -873,11 +873,13 @@ function vertycal_display_settings_page()
 {
 	// check if user is allowed access
     if ( ! current_user_can( 'manage_options' ) ) return;
-    if (isset($_GET['tab'])) {
-    $active_tab = (( null!= wp_unslash( sanitize_text_field( $_GET[ 'tab' ] )) )) ? wp_unslash( sanitize_text_field( $_GET[ 'tab' ] ) ) : 'vertycal_options'; 
-    } else { $active_tab = 'vertycal_options'; }
+    if ( isset( $_GET['tab'] ) ) { 
+        $tabb       = wp_unslash( $_GET[ 'tab' ] );
+        $active_tab = ( ( null!= sanitize_text_field( $tabb )) ) ? sanitize_text_field( $tabb ) : 'vertycal_options'; 
+    } else { 
+        $active_tab = 'vertycal_options'; 
+    }
 ?>
-
 	<div id="vrtclWrap" class="wrap">
 		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
         <h2 class="nav-tab-wrapper">

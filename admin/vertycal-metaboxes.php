@@ -193,8 +193,9 @@ function vertycal_update_date_time_meta( $post_id )
     ];
     foreach ( $fields as $field ) {
         if ( array_key_exists( $field, $_POST ) ) {                 // phpcs:ignore WordPress.Security.NonceVerification.Missing
-            update_post_meta( $post_id, $field,                     // phpcs:ignore WordPress.Security.NonceVerification.Missing
-                sanitize_text_field( wp_unslash( $_POST[$field] ) ) 
+            update_post_meta( $post_id, 
+                                $field,                     // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                                wp_unslash( sanitize_key( $_POST[$field] ) ) 
             );
         }
      }
