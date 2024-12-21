@@ -18,7 +18,7 @@ function vertycal_edit_scheduled_columns( $columns )
 		'vertycal_just_time_meta' => __( 'Time', 'vertycal' ),
         'vertycal_mark_done_meta' => __( 'Status', 'vertycal' ),
         'author'                  => __( 'Person', 'vertycal' ),
-        'date' => __( 'Published On' )
+        'date' => __( 'Published On', 'vertycal' )
 	);
 
 	return $columns;

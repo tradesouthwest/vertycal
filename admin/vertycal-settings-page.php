@@ -1,7 +1,7 @@
 <?php 
 /**
  * Sets all admin options settings
- * @since 1.1.0
+ * @since 1.1.1
  * @package vertycal
  * @subpackage admin/vertycal-settings-page
  */
@@ -874,7 +874,7 @@ function vertycal_display_settings_page()
 	// check if user is allowed access
     if ( ! current_user_can( 'manage_options' ) ) return;
     if (isset($_GET['tab'])) {
-    $active_tab = (( null!= wp_unslash( $_GET[ 'tab' ] ) )) ? wp_unslash( $_GET[ 'tab' ] ) : 'vertycal_options'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    $active_tab = (( null!= wp_unslash( sanitize_text_field( $_GET[ 'tab' ] )) )) ? wp_unslash( sanitize_text_field( $_GET[ 'tab' ] ) ) : 'vertycal_options'; 
     } else { $active_tab = 'vertycal_options'; }
 ?>
 

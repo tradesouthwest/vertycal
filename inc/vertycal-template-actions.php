@@ -330,8 +330,8 @@ var hOut = document.getElementById("hours");
 var mOut = document.getElementById("minutes");
 var sOut = document.getElementById("seconds");
 var ampmOut = document.getElementById("ampm");
-var months = <?php echo absint( $trans_months ); ?>;
-var days = <?php echo absint( $trans_days ); ?>;
+var months = <?php echo $trans_months;        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>;
+var days = <?php echo $trans_days;            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>;
 
 function update() {
   var e = new Date();

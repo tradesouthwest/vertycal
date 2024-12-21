@@ -144,15 +144,15 @@ function vertycal_display_thead()
 
 function vertycal_func_the_slug() 
 {
-	
-	$current_url= esc_url("//".wp_unslash($_SERVER['HTTP_HOST']).wp_unslash($_SERVER['REQUEST_URI'])); 
+	if (!isset($_SERVER['REQUEST_URI'])) return;
+	$current_url = esc_url( "//". sanitize_text_field(wp_unslash( $_SERVER['HTTP_HOST'] ))
+	. sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] )) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated
 	return $current_url; 
 }
 /**
  * Save front-side form post
  *
  * @since 1.0.0
- *
  * @param $vertycal_date_time string Custom metadata
  * @param $vertycal_just_time string Custom metadata
  * @param $title uses the isset() language construct to check if 3rd array key is set
@@ -161,11 +161,11 @@ function vertycal_func_the_slug()
 function vertycal_save_front_form_post()
 {   
 	if (!isset( $_REQUEST['vertycal_new_post_nonce'] ) ) return;
-	$verify = wp_verify_nonce( wp_unslash( sanitize_text_field( $_REQUEST['vertycal_new_post_nonce'] ) ), 'vertycal_new_post_nonce'); 
+	$verify = wp_verify_nonce( wp_unslash( sanitize_text_field( 
+			  $_REQUEST['vertycal_new_post_nonce'] ) ), 'vertycal_new_post_nonce' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
     if ( !$verify ) { exit("No funny business please"); }
 
 	global $wpdb, $post;
-
 	$post_page        = get_the_ID();
 	$vrtcl_success    = false;
 	//$current_page     = vertycal_func_the_slug();
@@ -205,7 +205,7 @@ function vertycal_save_front_form_post()
 		if( !empty( $_POST['vertycal_category'] ) ) 
 		{
 
-			$vertycal_cat  = wp_unslash( sanitize_text_field( $_POST['vertycal_category'] ) );
+			$vertycal_cat  = sanitize_text_field( wp_unslash( $_POST['vertycal_category'] ) );
 			$vertycal_cats = get_term_by( 'id', $vertycal_cat, 'vertycal_category' );
 			$vertycal_cat  = sanitize_key( $vertycal_cats->slug );
 			} else {
@@ -353,7 +353,8 @@ function vertycal_display_user_ip()
 {
     $ip = '';
     $ip .= esc_html__( 'Your current IP Address is: ', 'vertycal' );
-    $ip .= (isset($_SERVER['REMOTE_ADDR']) ) ? wp_unslash( esc_attr( sanitize_text_field( $_SERVER['REMOTE_ADDR'] ) ) ) : '';
+    $ip .= ( isset( $_SERVER['REMOTE_ADDR'] ) ) ? esc_attr( sanitize_text_field( 
+			wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) ) : '';
         return $ip;
 }
 

@@ -16,21 +16,21 @@ $destination = $subject = $message = $vertycal_email = $vertycal_from = $user_dn
  * @param string $vertycal_postid Uses esc_attr not absint due to string could be empty  
  */
 if( ! isset( $_POST['vertycal-markdone-nonce'] ) || 
-    ! wp_verify_nonce( $_POST['vertycal-markdone-nonce'], 'vertycal_markdone_nonce'))  
+    ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['vertycal-markdone-nonce'] ) ), 'vertycal_markdone_nonce'))  
 { 
     printf( '<div class="alert alert-danger" id="newsletterError">
     <p>%s</p>
     </div>',
-        __( 'Not Delivered Could not verify', 'vertycal' )
-        
+        esc_html__( 'Not Delivered Could not verify', 'vertycal' )
     );
 } 
     else 
     { 
     //get the info from the from the form
-    $vertycal_from   = sanitize_email( $_POST['vertycal_from'] );
-    $vertycal_postid = absint( $_POST['vertycal_postid'] );
-    $user_dname      = sanitize_text_field( $_POST['user_dname'] );
+
+    $vertycal_from   = isset( $_POST['vertycal_from'] ) ? sanitize_email( wp_unslash( $_POST['vertycal_from'])) : '';
+    $vertycal_postid = isset( $_POST['vertycal_postid']) ? sanitize_text_field( wp_unslash( $_POST['vertycal_postid'] )) : '';
+    $user_dname      = isset( $_POST['user_dname'] ) ? sanitize_text_field( wp_unslash( $_POST['user_dname'] ) ) : '';
 	    
 ob_start();
 echo 
@@ -52,7 +52,7 @@ echo
     </tr>
     <tr>
     <td style="color: #333333; font-family: Arial, sans-serif; font-size: 14px;">
-    <p>' . esc_html__( 'Received From: ', 'vertycal' ) . ' ' . sanitize_email( $vertycal_from ) . '</p>
+    <p>' . esc_html__( 'Received From: ', 'vertycal' ) . ' ' . esc_html( $vertycal_from ) . '</p>
     </td>
     </tr>
     <tr>
