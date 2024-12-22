@@ -10,15 +10,15 @@
  */
 $showyear = ( true === vertycal_state_checkbox_showyear() ) ? 5 : 0;
 $digitz = absint( $showyear ); //used to strip year from date
-$paged  = 1;
-if ( get_query_var('paged') ) $paged = get_query_var('paged');
-if ( get_query_var('page') ) $paged = get_query_var('page');
+$pageds  = 1;
+if ( get_query_var('paged') ) $pageds = get_query_var('paged');
+if ( get_query_var('page') ) $pageds = get_query_var('page');
 
 //build arguments for query
 $args   = array(
     'post_type'     => 'vertycal',
     'post_status'  => 'publish',
-    'paged'       => $paged,
+    'paged'       => $pageds,
     'orderby'    => 'meta_value',
     'meta_key'  => 'vertycal_date_time_meta',
     'order'    => 'ASC',

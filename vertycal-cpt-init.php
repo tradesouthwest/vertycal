@@ -9,23 +9,23 @@
  */ 
 function vertycal_custom_post_type_schedule() {
   $labels = array(
-    'name'               => _x( 'Schedule', 'post type general name' ),
-    'singular_name'      => _x( 'Schedule', 'post type singular name' ),
-    'add_new'            => _x( 'Add New', 'book' ),
-    'add_new_item'       => __( 'Add New Schedule' ),
-    'edit_item'          => __( 'Edit Schedule' ),
-    'new_item'           => __( 'New Schedule' ),
-    'all_items'          => __( 'All Schedules' ),
-    'view_item'          => __( 'View Schedule' ),
-    'search_items'       => __( 'Search Schedules' ),
-    'not_found'          => __( 'No schedules found' ),
-    'not_found_in_trash' => __( 'No schedules found in the Trash' ),
+    'name'               => _x( 'Schedule', 'post type general name', 'vertycal' ),
+    'singular_name'      => _x( 'Schedule', 'post type singular name', 'vertycal' ),
+    'add_new'            => _x( 'Add New', 'book', 'vertycal' ),
+    'add_new_item'       => __( 'Add New Schedule', 'vertycal' ),
+    'edit_item'          => __( 'Edit Schedule', 'vertycal' ),
+    'new_item'           => __( 'New Schedule', 'vertycal' ),
+    'all_items'          => __( 'All Schedules', 'vertycal' ),
+    'view_item'          => __( 'View Schedule', 'vertycal' ),
+    'search_items'       => __( 'Search Schedules', 'vertycal' ),
+    'not_found'          => __( 'No schedules found', 'vertycal' ),
+    'not_found_in_trash' => __( 'No schedules found in the Trash', 'vertycal' ),
     'parent_item_colon'  => '',
     'menu_name'          => 'Scheduler'
   );
   $args = array(
     'labels'        => $labels,
-    'description'    => __( 'Holds the Schedules and Schedule specific data' ),
+    'description'    => __( 'Holds the Schedules and Schedule specific data', 'vertycal' ),
     'rewrite'         => array( 'slug' => 'scheduled', 'with_front' => true ),
     'has_archive'      => true,
     'public'            => true,
@@ -42,17 +42,17 @@ function vertycal_custom_post_type_schedule() {
 function vertycal_taxonomies_forcpt_vertycal() 
 {
     $labels = array(
-      'name'              => _x( 'Schedules Categories', 'taxonomy general name' ),
-      'singular_name'     => _x( 'Schedule Category', 'taxonomy singular name' ),
-      'search_items'      => __( 'Search Schedule Categories' ),
-      'all_items'         => __( 'All Schedule Categories' ),
-      'parent_item'       => __( 'Parent Schedule Category' ),
-      'parent_item_colon' => __( 'Parent Schedule Category:' ),
-      'edit_item'         => __( 'Edit Schedule Category' ), 
-      'update_item'       => __( 'Update Schedule Category' ),
-      'add_new_item'      => __( 'Add New Schedule Category' ),
-      'new_item_name'     => __( 'New Schedule Category' ),
-      'menu_name'         => __( 'Schedule Categories' ),
+      'name'              => _x( 'Schedules Categories', 'taxonomy general name', 'vertycal' ),
+      'singular_name'     => _x( 'Schedule Category', 'taxonomy singular name', 'vertycal' ),
+      'search_items'      => __( 'Search Schedule Categories', 'vertycal' ),
+      'all_items'         => __( 'All Schedule Categories', 'vertycal' ),
+      'parent_item'       => __( 'Parent Schedule Category', 'vertycal' ),
+      'parent_item_colon' => __( 'Parent Schedule Category:', 'vertycal' ),
+      'edit_item'         => __( 'Edit Schedule Category', 'vertycal' ), 
+      'update_item'       => __( 'Update Schedule Category', 'vertycal' ),
+      'add_new_item'      => __( 'Add New Schedule Category', 'vertycal' ),
+      'new_item_name'     => __( 'New Schedule Category', 'vertycal' ),
+      'menu_name'         => __( 'Schedule Categories', 'vertycal' ),
     );
     $args = array(
       'labels' => $labels,
@@ -76,7 +76,7 @@ function vertycal_cpt_updated_messages( $messages )
          6 => sprintf( __( 'Schedule published. <a href="%s">View schedule</a>', 'vertycal' ), esc_url( get_permalink( $post_ID ) ) ),
          7 => __( 'Schedule saved.', 'vertycal' ),
          8 => sprintf( __( 'Schedule submitted. <a target="_blank" href="%s">Preview Schedule</a>', 'vertycal' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
-         9 => sprintf( __( 'Schedule to be published: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview recipe</a>', 'recipe-hero' ), date_i18n( __( 'M j, Y @ G:i', 
+         9 => sprintf( __( 'Schedule to be published: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview </a>', 'vertycal' ), date_i18n( __( 'M j, Y @ G:i', 
                 'vertycal' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
         10 => sprintf( __( 'Schedule draft updated. <a target="_blank" href="%s">Preview Schedule</a>',
          'vertycal' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),

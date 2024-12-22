@@ -90,12 +90,22 @@ function vertycal_tmplt_postperpage()
 /**
  * Pagination for cpt
  * 
- * @since 1.1.0
+ * @since 1.1.1 Added new query string.
  */
 function vertycal_pagination_schedule()
 {
-    global $wp_query;
-	
+    global $paged;
+    //build arguments for query
+    $argz   = array(
+        'post_type'     => 'vertycal',
+        'post_status'  => 'publish',
+        'paged'       => $paged,
+        'orderby'    => 'meta_value',
+        'meta_key'  => 'vertycal_date_time_meta',
+        'order'    => 'ASC',
+    ); 
+    $vt_query = new WP_Query($argz);
+	 
     ob_start();
 	?>
 	<div class="vrtcl-pagination">
@@ -105,7 +115,7 @@ function vertycal_pagination_schedule()
 			'base' => str_replace( $pager, '%#%', esc_url( get_pagenum_link( $pager ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var('paged') ),
-			'total' => $wp_query->max_num_pages
+			'total' => $vt_query->max_num_pages
 	   ) );
     ?>
     </div> 

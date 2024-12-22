@@ -144,19 +144,21 @@ function vertycal_display_thead()
 /**
  * get slug function
  *
- * @since 1.1.1
+ * @since 1.1.1 Deprecated!
  *
  * @param string $current_url Requested url.
  * @return string
- */
+ */ /*
 function vertycal_func_the_slug() 
 {
-	if ( null == $_SERVER['REQUEST_URI'] || $_SERVER['HTTP_HOST'] ) return;
+	if ( is_null( filter_input( INPUT_SERVER, 'REQUEST_URI' ) ) || ! filter_input( INPUT_SERVER, 'HTTP_HOST' ) ) {
+		return;
+	}
 	$shsh        = wp_unslash( $_SERVER['HTTP_HOST'] );
 	$srsr        = wp_unslash( $_SERVER['REQUEST_URI'] );
 	$current_url = esc_url( "//". sanitize_text_field( $shsh ). sanitize_text_field( $srsr ) ); 
 	return $current_url; 
-}
+} */
 /**
  * Save front-side form post
  *

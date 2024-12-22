@@ -24,7 +24,7 @@ get_header(); ?>
     $vertycal_date_time = get_post_meta(get_the_ID(),'vertycal_date_time_meta',true);
     $vertycal_just_time = get_post_meta(get_the_ID(),'vertycal_just_time_meta',true);
 ?>
-    <h2><?php echo get_queried_object()->name; ?></h2>
+    <h2><?php echo esc_html( get_queried_object()->name ); ?></h2>
 <?php
     
     $vrtcl_tax_post_args = array(
@@ -53,9 +53,9 @@ get_header(); ?>
               $vrtcl_tax_post_qry->the_post(); ?>
      
         <article>
-            <h3 class="entry-title" itemprop="headline">
+            <h4 class="entry-title" itemprop="headline">
             <a href="<?php the_permalink(); ?>" class="entry-title-link" 
-            title="<?php the_archive_title(); ?>"><?php the_title(); ?></a></h3>
+            title="<?php the_archive_title(); ?>"><?php the_title(); ?></a></h4>
 
             <span class="inner-date-time">
 
@@ -70,7 +70,7 @@ get_header(); ?>
                     <?php trim( wp_strip_all_tags( the_excerpt() ) ); ?>
                 </div>
             </div>
-            
+            <hr>
         </article>
 
         <?php

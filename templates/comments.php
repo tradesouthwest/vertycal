@@ -1,20 +1,16 @@
 <?php
 /**
- * 
+ * Comments template
+ * @since 1.1.1
  */
-if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-die ('X');
-
+if ( comments_open() && get_comments_number() ) : 
 if (post_password_required()) {  // and it doesn't match the cookie
 		?>
 		<p class="nocomments">
 		<?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 
 			'vertycal' ); ?></p>
 		<?php
-		//return;
-}
-?>
-
+} ?>
 <div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
@@ -23,13 +19,13 @@ if (post_password_required()) {  // and it doesn't match the cookie
 		<ol class="comment-list">
 			<?php 
 			global $post;
-			$comments = get_comments(array('post_id' => intval($post->ID()), 
+			$commentz = get_comments(array('post_id' => intval($post->ID()), 
 											'status' => 'approve'));
 				wp_list_comments(
 					array(
 						'style'       => 'ol',
 						'short_ping'  => true
-					), $comments
+					), $commentz
 				);
 			?>
 		</ol>
@@ -48,6 +44,7 @@ if (post_password_required()) {  // and it doesn't match the cookie
 				'label_submit'       => __( 'Add Notation', 'vertycal' ),
 			)
 		);
-		?>
+	?>
 
-</div>
+</div><?php
+endif; 

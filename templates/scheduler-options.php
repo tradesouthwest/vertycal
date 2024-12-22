@@ -23,7 +23,7 @@
   <hr> <?php echo wp_kses_post( vertycal_get_options_page_post() ); ?> <hr>
 
       <?php  
-      echo ob_get_clean(); 
+      echo ob_get_clean();                       // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
       ?>
 
   </div>

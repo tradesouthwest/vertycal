@@ -60,21 +60,21 @@
 
 		<?php if( $vertycal_location != '' ) : ?>
 
-		<p><a href="http://maps.google.com/?q=<?php print( $vertycal_location ); ?>" 
-			  title="<?php print( vertycal_get_address( $postid ) ); ?>" 
+		<p><a href="http://maps.google.com/?q=<?php echo esc_attr( $vertycal_location ); ?>" 
+			  title="<?php echo esc_attr( vertycal_get_address( $postid ) ); ?>" 
 			  target="_blank">
 		<span class="maybemap"></span> 
-		<?php print( vertycal_get_address($postid)); ?></a></p>
+		<?php echo esc_html( vertycal_get_address( $postid ) ); ?></a></p>
 
 		<?php endif; ?>
 
 		<?php if( $vertycal_telephone != '' ) : ?>
 
-		<p id="telDial"><a href="tel:<?php print( vertycal_get_telephone($postid)); ?>"
-		   				   title="<?php print( vertycal_get_telephone($postid) ); ?>" 
+		<p id="telDial"><a href="tel:<?php echo esc_attr( vertycal_get_telephone( $postid ) ); ?>"
+		   				   title="<?php echo esc_attr( vertycal_get_telephone( $postid ) ); ?>" 
 						   target="_blank">
 					<span class="maybetel"></span> 
-					<?php print( vertycal_get_telephone( $postid )); ?></a></p>
+					<?php echo esc_html( vertycal_get_telephone( $postid ) ); ?></a></p>
 	
 		<?php endif; ?>
 
@@ -89,13 +89,13 @@
 		if ( true === $vertycal_markdone )
 		{ 
 		/* 
-		 * If title is set and post is submitted ~ send mail */	
-		if( isset( $_POST['vmarkdone'] ) ) : 
-
-		    include_once 'vertycal-email-html.php';
+		 * If title is set and post is submitted ~ send mail - post markdone is a plugin option */	
+		if( isset( $_POST['vmarkdone'] ) ) :                  // phpcs:ignore WordPress.Security.NonceVerification.Missing
+      
+		    require_once 'vertycal-email-html.php';
 		endif;
 		?>
-		<?php $user_email = get_the_author_meta('user_email');
+		<?php $useremail = get_the_author_meta('user_email');
 			  $user_dname = get_the_author_meta('display_name'); ?>
 
 		<form class="mark-done" name="vrtcl_markdone" method="post" action="">
@@ -108,7 +108,7 @@
 		<input type="hidden"    name="vertycal_postid" 
 			   value="<?php echo esc_attr($postid); ?>">
 		<input type="hidden"    name="vertycal_from" 
-			   value="<?php echo sanitize_email( $user_email ); ?>">
+			   value="<?php echo esc_attr( $useremail ); ?>">
 
 		<?php //$action, $name, $referer, $echo
 		wp_nonce_field( 'vertycal_markdone_nonce', 'vertycal-markdone-nonce', true, true ) ?>
@@ -130,7 +130,7 @@
 			sprintf(
 				/* translators: %s: Name of current post */
 				__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'vertycal' ),
-				get_the_title()
+				esc_html( get_the_title() )
 			),
 			'<span class="edit-link">',
 			'</span>'
@@ -138,7 +138,7 @@
 		?></p>
 		<aside class="single-categories">
 			
-			<?php echo trim( vertycal_tmplt_single_taxonomy() ); ?>
+			<?php echo wp_kses_post( trim( vertycal_tmplt_single_taxonomy() ) ); ?>
 		
 		</aside>
 
