@@ -5,11 +5,11 @@ Scheduling plugin for ClassicPress
 
 - Requires PHP: 7.4
 - Requires CP:  1.4
-- Version:      1.0.4
-- Author:       Larry Judd
-- Tags:         two-columns, translation-ready, featured-images, blog, e-commerce, news, custom-menu, custom-background, custom-logo, custom-header
+- Version:      1.1.2
+- Author:       TradeSouthwest
+- Tags:         scheduling, booking, appointments, translation-ready, custom-logo
 - License:      GPL 3 (see LICENSE)
-- Text domain:  april
+- Text domain:  vertycal
 
 ## Dispatch and read schedules online
 Schedule based vertical table data application to post service calls or list events. Front side calendar is viewable by the public and the input functions restricted to a log in access only. 
