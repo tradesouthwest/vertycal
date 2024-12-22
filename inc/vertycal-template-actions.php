@@ -352,7 +352,8 @@ update();
 window.setInterval(update, 1000);
 </script>
 
-<?php  // output clean html
-    echo ob_get_clean();
+<?php  
+    // output clean html
+    echo ob_get_clean();     // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 } 

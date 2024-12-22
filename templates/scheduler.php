@@ -26,10 +26,8 @@ get_header();
             <div class="vrtcl-form_handler">
 
             <?php 
-            if( isset( $_POST['action'] ) && !empty( $_POST['action'] )
-                &&  $_POST['action'] == 'vertycal_new_post_action' )
-            {
-                // Do the wp_insert_post action
+            if( isset( $_POST['action'] ) && !empty( $_POST['action'] ) &&  $_POST['action'] == 'vertycal_new_post_action' ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                // Do the wp_insert_post action - nonce verified here.
                 vertycal_save_front_form_post();
             }
             ?>
@@ -57,7 +55,7 @@ get_header();
              */
             sanitize_text_field( vertycal_get_current_user( 'user_nickname' ) ); ?></h4>
 
-            <?php include_once( VERTYCAL_PLUGIN_PATH . 'templates/scheduler-content.php' ); ?>
+            <?php require_once( VERTYCAL_PLUGIN_PATH . 'templates/scheduler-content.php' ); ?>
             
             </section>
         </div>
@@ -67,7 +65,7 @@ get_header();
             <h5><?php /* Title New Entry */
                 esc_html_e( 'Add New entry', 'vertycal' ); ?></h5>
 
-            <?php include_once( VERTYCAL_PLUGIN_PATH . 'templates/scheduler-new.php' ); ?>
+            <?php require_once( VERTYCAL_PLUGIN_PATH . 'templates/scheduler-new.php' ); ?>
 
             </section>
         </div>
@@ -77,7 +75,7 @@ get_header();
             <h5><?php /* Title to Options */
             esc_html_e( 'Additional Information', 'vertycal' ); ?></h5>
 
-            <?php include_once( VERTYCAL_PLUGIN_PATH . 'templates/scheduler-options.php' ); ?>
+            <?php require_once( VERTYCAL_PLUGIN_PATH . 'templates/scheduler-options.php' ); ?>
 
             </section>
         </div>

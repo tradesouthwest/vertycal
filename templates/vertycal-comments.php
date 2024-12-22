@@ -31,16 +31,16 @@ if ( post_password_required() ) {
                 printf( esc_html_x( 'One note for &ldquo;%s&rdquo;', 'comments title', 'vertycal' ), 
                 esc_html( get_the_title()) );
 			} else {
+				/* translators: 1: number of comments, 2: post title */
 				printf(
-					/* translators: 1: number of comments, 2: post title */
-					esc_attr_nx(
+					esc_attr_nx(                             // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						'%1$s note for &ldquo;%2$s&rdquo;',
 						'%1$s notes for &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
 						'vertycal'
 					),
-					number_format_i18n( esc_attr( $comments_number ) ),
+					esc_attr( number_format_i18n( $comments_number ) ),
 					esc_html( get_the_title() )
 				);
 			}
