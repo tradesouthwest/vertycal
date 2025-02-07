@@ -38,6 +38,7 @@ Theme built with CSS3 grid templating specifications for full mobile and small d
 
 # Support
 Use https://github.com/tradesouthwest/vertycal/issues to post your issues with this theme.
+Dev betas on http://vertycal.tradesweb.us/scheduler/
 
 # Change Log
 - 1.1.3
