@@ -6,7 +6,7 @@
  * Plugin URI:   http://sunlandcomputers/vertycal/scheduler
  * Author:       Larry Judd
  * Author URI:   https://tradesouthwest.com
- * Version:      1.1.1
+ * Version:      1.1.3
  * Requires PHP: 5.6
  * Requires CP:  2.4
  * Text Domain:  vertycal
@@ -41,12 +41,13 @@ if( !defined( 'VERTYCAL_PLUGIN_PATH' )) { define( 'VERTYCAL_PLUGIN_PATH',
  * 
  * @param object 'vertycal' Custom Post Type
  */
+
+    require_once ( VERTYCAL_PLUGIN_PATH . 'vertycal-cpt-init.php' );
+    
     add_action( 'init', 'vertycal_custom_post_type_schedule', 1 ); //aka vertycal 
     add_action( 'init', 'vertycal_taxonomies_forcpt_vertycal', 0 );
    //add_action( 'contextual_help', 'vertycal_admin_contextual_help', 10, 3 );
     add_filter( 'post_updated_messages', 'vertycal_cpt_updated_messages' );
-
-    require_once ( VERTYCAL_PLUGIN_PATH . 'vertycal-cpt-init.php' );
 
 /**
  * (init) functions for plugin activation
@@ -76,7 +77,7 @@ function vertycal_plugin_activation()
     // Create transient data 
     set_transient( 'vrtcl-admin-notice-startup', true, 5 );
    
-    //flush_rewrite_rules();
+    flush_rewrite_rules();
     
 }
 function vertycal_plugin_deactivation() 

@@ -142,7 +142,7 @@ function vertycal_the_item_status( $post_id )
 /**
  * Get metadat Address/Location
  */
-function vertycal_get_address( $post_id )
+function vertycal_get_location( $post_id )
 {
 
 	$post_id           = get_the_ID();
@@ -170,10 +170,11 @@ function vertycal_get_telephone( $post_id )
  */
 function vertycal_state_checkbox_markdone()
 {
-	$optionx = get_option('vertycal_options')['vertycal_checkbox_markdone'];
-	$state   = ( empty( $optionx ) ) ? 0 : $optionx;
-		if( $state == '1')
-			return true;
+	$optionx = empty( get_option('vertycal_options')['vertycal_checkbox_markdone'] ) 
+                ? '0' : get_option('vertycal_options')['vertycal_checkbox_markdone'];
+	$state   = empty( $optionx ) ? '0' : $optionx;
+		if( $state === '1') {
+			return true; } else { return false; }
 } 
 
 /**

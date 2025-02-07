@@ -18,42 +18,42 @@ if ( is_user_logged_in() && current_user_can( 'edit_posts' ) ) :
 		enctype="multipart/form-data">
 
 		<fieldset class="field-content">
-			<label for="title"><?php esc_html( $labeltitle ); ?></label>
+			<label for="title"><?php echo esc_html( $labeltitle ); ?></label>
 			<input id="title" class="text_field" type="text" 
 				   value="" tabindex="2" name="title" required />
 		</fieldset>
 
 		<fieldset class="field-content">
-			<label for="vertycal_date_time_meta"><?php esc_html( $labeldate ); ?></label>
+			<label for="vertycal_date_time_meta"><?php echo esc_html( $labeldate ); ?></label>
 			<input id="VrtclDate" class="text_field" type="date" placeholder=""
 				   value="" tabindex="3" name="vertycal_date_time_meta" />
 		</fieldset>
 
 		<fieldset class="field-content">
-			<label for="vertycal_just_time_meta"><?php esc_html( $labeltime ); ?></label>
+			<label for="vertycal_just_time_meta"><?php echo esc_html( $labeltime ); ?></label>
 			<input id="vertycal_just_time_meta" class="text_field" type="time" 
 			       value="" tabindex="4" name="vertycal_just_time_meta" />
 		</fieldset>
 
 		<fieldset class="field-content">
-			<label for="vertycal_location_meta"><?php esc_html( $labellocation ); ?></label>
+			<label for="vertycal_location_meta"><?php echo esc_html( $labellocation ); ?></label>
 			<input id="vertycal_location_meta" class="text_field" type="text" 
 			       value="" tabindex="4" name="vertycal_location_meta" />
 		</fieldset>
 
 		<fieldset class="field-content">
-			<label for="vertycal_telephone_meta"><?php esc_html( $labelphone ); ?></label>
+			<label for="vertycal_telephone_meta"><?php echo esc_html( $labelphone ); ?></label>
 			<input id="vertycal_telephone_meta" class="text_field" type="phone" 
 			       value="" tabindex="4" name="vertycal_telephone_meta" />
 		</fieldset>
 	
 		<fieldset class="field-content">
-			<label for="vertycal_excerpt"><?php esc_html( $labelexcerpt ); ?></label>			
+			<label for="vertycal_excerpt"><?php echo esc_html( $labelexcerpt ); ?></label>			
 <textarea id="vertycal_excerpt" tabindex="5" name="vertycal_excerpt" rows="2" cols="20"></textarea>
 		</fieldset>
 
 		<fieldset class="field-content category-dropdown">
-			<label for="vertycal_category"><?php esc_html( $labelcat ); ?></label>
+			<label for="vertycal_category"><?php echo esc_html( $labelcat ); ?></label>
 			
 <?php 
 wp_dropdown_categories( 

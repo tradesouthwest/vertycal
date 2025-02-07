@@ -32,7 +32,7 @@
 		$vertycal_date_time  = get_post_meta(get_the_ID(),'vertycal_date_time_meta',true);
 		$vertycal_just_time  = get_post_meta(get_the_ID(),'vertycal_just_time_meta',true);
 		$vertycal_date_time  = substr( $vertycal_date_time, $digitz );
-		$vertycal_location   = vertycal_get_address( $postid );
+		$vertycal_location   = vertycal_get_location( $postid );
 		$vertycal_telephone  = vertycal_get_telephone( $postid );
 		?>
 
@@ -61,10 +61,10 @@
 		<?php if( $vertycal_location != '' ) : ?>
 
 		<p><a href="http://maps.google.com/?q=<?php echo esc_attr( $vertycal_location ); ?>" 
-			  title="<?php echo esc_attr( vertycal_get_address( $postid ) ); ?>" 
+			  title="<?php echo sanitize_title( vertycal_get_location( $postid ) ); ?>" 
 			  target="_blank">
 		<span class="maybemap"></span> 
-		<?php echo esc_html( vertycal_get_address( $postid ) ); ?></a></p>
+		<?php echo esc_html( vertycal_get_location( $postid ) ); ?></a></p>
 
 		<?php endif; ?>
 
@@ -84,7 +84,7 @@
 
 	<?php //check for mark_done option set 
 	if( function_exists( 'vertycal_state_checkbox_markdone' ) ) : 
-		$vertycal_markdone = '';
+		$vertycal_markdone = false;
 		$vertycal_markdone = vertycal_state_checkbox_markdone();
 		if ( true === $vertycal_markdone )
 		{ 

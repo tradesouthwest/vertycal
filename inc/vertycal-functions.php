@@ -188,34 +188,34 @@ function vertycal_save_front_form_post()
 		//title Sanitized in $new_post array()
 		$title = ( empty( $_POST['title'] ) ) 
 					? 'title_none' : 
-					sanitize_title( wp_unslash( $_POST['title'] ) );
+					wp_unslash( sanitize_text_field( $_POST['title'] ) );
 		//custom meta input
 		$vertycal_date_time = ( empty( $_POST['vertycal_date_time_meta'] ) )
-		          	? 'date_none' :
-				  	sanitize_text_field( wp_unslash( $_POST['vertycal_date_time_meta'] ) );
+		          	? 'date_none' : wp_date( get_option( 'date_format' ), 
+					wp_unslash( sanitize_text_field( $_POST['vertycal_date_time_meta'] ) ));
 		//custom meta input
 		$vertycal_just_time = ( empty( $_POST['vertycal_just_time_meta'] ) )
-					? '' : 
-					sanitize_text_field( wp_unslash( $_POST['vertycal_just_time_meta'] ) );
+					? '' : wp_date( get_option( 'time_format' ), 
+					wp_unslash( sanitize_text_field( $_POST['vertycal_just_time_meta'] ) ) );
 		//custom meta input
 		$vertycal_location = ( empty( $_POST['vertycal_location_meta'] ) )
 					? '' : 
-					sanitize_text_field( wp_unslash( $_POST['vertycal_location_meta'] ) );
+					wp_unslash( $_POST['vertycal_location_meta'] );
 		//custom meta input
 		$vertycal_telephone = ( empty( $_POST['vertycal_telephone_meta'] ) )
 					? '' : 
-					sanitize_text_field( wp_unslash( $_POST['vertycal_telephone_meta'] ) );
+					wp_unslash( sanitize_text_field( $_POST['vertycal_telephone_meta'] ) );
 
 		if( !empty( $_POST['vertycal_excerpt'] ) ) 
 		{
 
-		$vertycal_excerpt = trim( wp_strip_all_tags( wp_unslash( $_POST['vertycal_excerpt'] ) ) );
+		$vertycal_excerpt = wp_unslash( trim( wp_strip_all_tags( $_POST['vertycal_excerpt'] ) ) );
 		}
 		//category
 		if( !empty( $_POST['vertycal_category'] ) ) 
 		{
 
-			$vertycal_cat  = sanitize_text_field( wp_unslash( $_POST['vertycal_category'] ) );
+			$vertycal_cat  =  wp_unslash( sanitize_text_field( $_POST['vertycal_category'] ) );
 			$vertycal_cats = get_term_by( 'id', $vertycal_cat, 'vertycal_category' );
 			$vertycal_cat  = sanitize_key( $vertycal_cats->slug );
 			} else {
@@ -234,10 +234,10 @@ function vertycal_save_front_form_post()
 		'post_excerpt' => $vertycal_excerpt,
 		'author'       => absint( $current_users_id ),
 		'meta_input'   => array(
-			'vertycal_date_time_meta' => wp_strip_all_tags( $vertycal_date_time ),
-			'vertycal_just_time_meta' => wp_strip_all_tags( $vertycal_just_time ),
-			'vertycal_location_meta'  => wp_strip_all_tags( $vertycal_location ),
-			'vertycal_telephone_meta' => wp_strip_all_tags( $vertycal_telephone ),
+			'vertycal_date_time_meta' => sanitize_text_field( $vertycal_date_time ),
+			'vertycal_just_time_meta' => sanitize_text_field( $vertycal_just_time ),
+			'vertycal_location_meta'  => sanitize_text_field( $vertycal_location ),
+			'vertycal_telephone_meta' => sanitize_text_field( $vertycal_telephone ),
 			),
 			'tax_input' => array(
 				'vertycal_category' => sanitize_text_field( $vertycal_cat ),

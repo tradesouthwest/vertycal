@@ -5,7 +5,7 @@ Scheduling plugin for ClassicPress
 
 - Requires PHP: 7.4
 - Requires CP:  1.4
-- Version:      1.1.2
+- Version:      1.1.3
 - Author:       TradeSouthwest
 - Tags:         scheduling, booking, appointments, translation-ready, custom-logo
 - License:      GPL 3 (see LICENSE)
@@ -40,6 +40,6 @@ Theme built with CSS3 grid templating specifications for full mobile and small d
 Use https://github.com/tradesouthwest/vertycal/issues to post your issues with this theme.
 
 # Change Log
-- 1.1.1
-Dec 4 2024
-* initial release
+- 1.1.3
+Feb 4 2025
+* clas408 db

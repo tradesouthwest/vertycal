@@ -96,12 +96,7 @@ echo
     /*
      * Get content type text/html or text
      */
-	add_filter( 'wp_mail_content_type', $ctype_func = function( $params ) {
-        
-        $params['headers'] = 'Content-type: text/html';
-        return $params;
-        } 
-    );
+	//add_filter( 'wp_mail_content_type', 'Content-type: text/html' );
 
 	/**
      * Send Mail
@@ -112,7 +107,7 @@ echo
 	$sending = wp_mail( $vertycal_from, $subject, $message, $headers );
     
     // Reset content-type to avoid conflicts https://core.trac.wordpress.org/ticket/23578
-    remove_filter( 'wp_mail_content_type', $ctype_func );
+    //remove_filter( 'wp_mail_content_type', 'Content-type: text/html' );
 
     // Clean strings
     $destination = $subject = $message = $vertycal_from = $user_dname = null; 
