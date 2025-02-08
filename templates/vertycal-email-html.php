@@ -92,7 +92,6 @@ echo
     $headers[]      = 'From: ' . sanitize_email( $vertycal_from );
     $destination    = ( empty( $vertycal_email ) ) ? sanitize_email( $send_to ) 
                       : sanitize_email( $vertycal_email );
-    
     /*
      * Get content type text/html or text
      */
@@ -105,9 +104,9 @@ echo
      * @param $sending string Use string to verify wp_mail 
      */
 	$sending = wp_mail( $vertycal_from, $subject, $message, $headers );
-    
+
     // Reset content-type to avoid conflicts https://core.trac.wordpress.org/ticket/23578
-    //remove_filter( 'wp_mail_content_type', 'Content-type: text/html' );
+    // remove_filter( 'wp_mail_content_type', 'Content-type: text/html' );
 
     // Clean strings
     $destination = $subject = $message = $vertycal_from = $user_dname = null; 

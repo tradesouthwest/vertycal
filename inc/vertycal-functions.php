@@ -200,7 +200,8 @@ function vertycal_save_front_form_post()
 		//custom meta input
 		$vertycal_location = ( empty( $_POST['vertycal_location_meta'] ) )
 					? '' : 
-					wp_unslash( $_POST['vertycal_location_meta'] );
+					wp_unslash( sanitize_textarea_field( $_POST['vertycal_location_meta'] ) );
+					error_log("After sanitization: " . var_export($vertycal_location, true));
 		//custom meta input
 		$vertycal_telephone = ( empty( $_POST['vertycal_telephone_meta'] ) )
 					? '' : 
@@ -215,7 +216,7 @@ function vertycal_save_front_form_post()
 		if( !empty( $_POST['vertycal_category'] ) ) 
 		{
 
-			$vertycal_cat  =  wp_unslash( sanitize_text_field( $_POST['vertycal_category'] ) );
+			$vertycal_cat  = wp_unslash( sanitize_text_field( $_POST['vertycal_category'] ) );
 			$vertycal_cats = get_term_by( 'id', $vertycal_cat, 'vertycal_category' );
 			$vertycal_cat  = sanitize_key( $vertycal_cats->slug );
 			} else {
@@ -231,19 +232,19 @@ function vertycal_save_front_form_post()
 		'post_status'  => 'publish', //ToDo get_option('vertycal_default_post_status'),
 		'post_type'    => 'vertycal',
         'post_title'   => sanitize_title( $title ),
-		'post_excerpt' => $vertycal_excerpt,
+		'post_excerpt' => wp_kses_post($vertycal_excerpt),
 		'author'       => absint( $current_users_id ),
 		'meta_input'   => array(
 			'vertycal_date_time_meta' => sanitize_text_field( $vertycal_date_time ),
 			'vertycal_just_time_meta' => sanitize_text_field( $vertycal_just_time ),
-			'vertycal_location_meta'  => sanitize_text_field( $vertycal_location ),
+			'vertycal_location_meta'  => wp_kses_post( $vertycal_location ),
 			'vertycal_telephone_meta' => sanitize_text_field( $vertycal_telephone ),
 			),
 			'tax_input' => array(
 				'vertycal_category' => sanitize_text_field( $vertycal_cat ),
 			),
         );
-
+		error_log("Just before database query: " . var_export($vertycal_location, true)); 
 		//SAVE THE POST
 		$post_id = wp_insert_post( $new_post );
 		//$object_id, $terms, $taxonomy, $append
