@@ -201,7 +201,7 @@ function vertycal_save_front_form_post()
 		$vertycal_location = ( empty( $_POST['vertycal_location_meta'] ) )
 					? '' : 
 					wp_unslash( sanitize_textarea_field( $_POST['vertycal_location_meta'] ) );
-					error_log("After sanitization: " . var_export($vertycal_location, true));
+					//error_log("After sanitization: " . var_export($vertycal_location, true));
 		//custom meta input
 		$vertycal_telephone = ( empty( $_POST['vertycal_telephone_meta'] ) )
 					? '' : 
@@ -244,7 +244,7 @@ function vertycal_save_front_form_post()
 				'vertycal_category' => sanitize_text_field( $vertycal_cat ),
 			),
         );
-		error_log("Just before database query: " . var_export($vertycal_location, true)); 
+		//error_log("Just before database query: " . var_export($vertycal_location, true)); 
 		//SAVE THE POST
 		$post_id = wp_insert_post( $new_post );
 		//$object_id, $terms, $taxonomy, $append
