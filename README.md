@@ -34,7 +34,6 @@ VertyCal Options Include:
 * Entries can be viewed without login
 * Vertical display of dates works very nicely on a mobile device.
 
-Theme built with CSS3 grid templating specifications for full mobile and small device support.
 
 # Support
 Use https://github.com/tradesouthwest/vertycal/issues to post your issues with this theme.
