@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {	exit; }
  * @param VERTYCAL_URL         Base path
  * @param VERTYCAL_PLUGIN_PATH Directory path      
  */
-if( !defined( 'VERTYCAL_VER' )) { define( 'VERTYCAL_VER', '1.1.1' ); }
+if( !defined( 'VERTYCAL_VER' )) { define( 'VERTYCAL_VER', '1.1.4' ); }
 if( !defined( 'VERTYCAL_URL' )) { define( 'VERTYCAL_URL', 
     plugin_dir_url(__FILE__)); }
 if( !defined( 'VERTYCAL_PLUGIN_PATH' )) { define( 'VERTYCAL_PLUGIN_PATH', 
