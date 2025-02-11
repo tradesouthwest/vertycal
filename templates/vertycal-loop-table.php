@@ -9,7 +9,7 @@
  *
  */
 $showyear = ( true === vertycal_state_checkbox_showyear() ) ? 5 : 0;
-$digitz = absint( $showyear ); //used to strip year from date
+$digitz = absint( $showyear ); // strips year from date
 $pageds  = 1;
 if ( get_query_var('paged') ) $pageds = get_query_var('paged');
 if ( get_query_var('page') ) $pageds = get_query_var('page');
@@ -18,9 +18,8 @@ if ( get_query_var('page') ) $pageds = get_query_var('page');
 $args   = array(
     'post_type'     => 'vertycal',
     'post_status'  => 'publish',
-    'paged'       => $pageds,
+    'paged'       => esc_attr( $pageds),
     'orderby'    => 'meta_value',
-    'meta_key'  => 'vertycal_date_time_meta',  // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
-    'order'    => 'ASC',
+    'meta_key'  => 'vertycal_date_time_meta',   // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
 ); 
 ?>
