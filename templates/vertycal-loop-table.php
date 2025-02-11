@@ -20,7 +20,7 @@ $args   = array(
     'post_status'  => 'publish',
     'paged'       => $pageds,
     'orderby'    => 'meta_value',
-    'meta_key'  => 'vertycal_date_time_meta',
+    'meta_key'  => 'vertycal_date_time_meta',  // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
     'order'    => 'ASC',
 ); 
 ?>

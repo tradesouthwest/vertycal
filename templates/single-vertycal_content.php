@@ -61,7 +61,7 @@
 		<?php if( $vertycal_location != '' ) : ?>
 
 		<p><a href="http://maps.google.com/?q=<?php echo esc_attr( $vertycal_location ); ?>" 
-			  title="<?php echo sanitize_title( vertycal_get_location( $postid ) ); ?>" 
+			  title="<?php echo sanitize_text_field( vertycal_get_location( $postid ) ); ?>" 
 			  target="_blank">
 		<span class="maybemap"></span> 
 		<?php echo esc_html( vertycal_get_location( $postid ) ); ?></a></p>

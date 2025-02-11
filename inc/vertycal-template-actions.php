@@ -101,7 +101,7 @@ function vertycal_pagination_schedule()
         'post_status'  => 'publish',
         'paged'       => $paged,
         'orderby'    => 'meta_value',
-        'meta_key'  => 'vertycal_date_time_meta',
+        'meta_key'  => 'vertycal_date_time_meta',  // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
         'order'    => 'ASC',
     ); 
     $vt_query = new WP_Query($argz);

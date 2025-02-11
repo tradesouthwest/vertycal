@@ -873,8 +873,8 @@ function vertycal_display_settings_page()
 {
 	// check if user is allowed access
     if ( ! current_user_can( 'manage_options' ) ) return;
-    if ( isset( $_GET['tab'] ) ) { 
-        $tabb       = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );
+    if ( isset( $_GET['tab'] ) ) {         // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $tabb       = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         $active_tab = ( ( null!= sanitize_text_field( $tabb )) ) ? sanitize_text_field( $tabb ) : 'vertycal_options'; 
     } else { 
         $active_tab = 'vertycal_options'; 

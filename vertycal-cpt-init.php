@@ -71,8 +71,8 @@ function vertycal_cpt_updated_messages( $messages )
          2 => '',
          3 => '',
          4 => __( 'Schedule updated.', 'vertycal' ),
-         5 => isset( $_GET['revision'] ) ? sprintf( __( 'Schedule restored to revision from %s', 'vertycal' ), 
-                            wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+         5 => isset( $_GET['revision'] ) ? sprintf( __( 'Schedule restored to revision from %s', 'vertycal' ), // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+                            wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,               // phpcs:ignore WordPress.Security.NonceVerification.Recommended
          6 => sprintf( __( 'Schedule published. <a href="%s">View schedule</a>', 'vertycal' ), esc_url( get_permalink( $post_ID ) ) ),
          7 => __( 'Schedule saved.', 'vertycal' ),
          8 => sprintf( __( 'Schedule submitted. <a target="_blank" href="%s">Preview Schedule</a>', 'vertycal' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
