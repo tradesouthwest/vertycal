@@ -31,14 +31,14 @@ get_header(); ?>
         'post_type' => 'vertycal', // Post type
         'order_by'  => 'meta_value',
         'order'     => 'ASC',
-        'tax_query' => array(      // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+        'tax_query' => array(       // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
             array(
                 'taxonomy' => 'vertycal_category',
                 'field'   => 'slug',
                 'terms'  => get_queried_object()->slug,
             ),
         ),
-            'meta_query' => array(   // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+            'meta_query' => array(    // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
                 array(
                     'key' => 'vertycal_date_time_meta',
                     'value' => 'meta_value_num',
