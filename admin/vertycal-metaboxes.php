@@ -192,10 +192,10 @@ function vertycal_update_date_time_meta( $post_id )
         'vertycal_telephone_meta'
     ];
     foreach ( $fields as $field ) {
-        if ( array_key_exists( $field, $_POST ) ) {                 // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        if ( array_key_exists( $field, $_POST ) ) {  
             update_post_meta( $post_id, 
                                 $field,                     
-                                wp_unslash( sanitize_key( $_POST[$field] ) )  // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                                wp_kses_post( wp_unslash( $_POST[$field] ) )  // phpcs:ignore WordPress.Security.NonceVerification.Missing
             );
         }
      }
