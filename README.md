@@ -3,9 +3,9 @@
 # VertyCal
 Scheduling plugin for ClassicPress. Vertical aligned table for mobile.
 
-- Requires PHP: 7.4
-- Requires CP:  1.4
-- Version:      1.1.4 
+- Requires PHP: 7.5
+- Requires CP:  2.1
+- Version:      1.1.5
 - Author:       TradeSouthwest
 - Tags:         scheduling, booking, appointments, translation-ready, custom-logo
 - License:      GPL 3 (see LICENSE)
@@ -41,6 +41,9 @@ Use https://github.com/tradesouthwest/vertycal/issues to post your issues with t
 Dev betas on http://vertycal.tradesweb.us/scheduler/
 
 # Change Log
+- 1.1.5
+Feb 23 2025
+* fixed cpt init
 - 1.1.4
 Feb 4 2025
 * sanitize keys changed to wpksespost
