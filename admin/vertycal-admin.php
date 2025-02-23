@@ -382,7 +382,7 @@ function vertycal_editor_gettext( $translation, $original, $typenow )
 	if ( vertycal_is_edit_page( array( 'edit', 'new' ) ) && "vertycal" == $typenow )
 	{
 		if ( 'Excerpt' == $original ) {
-			return esc_html__( 'Sheduler notes', 'vertycal' );
+			return esc_html__( 'Scheduler notes', 'vertycal' );
 		} else {
 			$pos = strpos( $original,
 						   'Excerpts are optional hand-crafted summaries of your' );

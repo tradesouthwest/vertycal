@@ -24,8 +24,8 @@ function vertycal_plugin_activation_notices()
         <p class="vrtcl-activate" style="background:#f2f2a0"><?php esc_html_e( 'Thank you for adding this plugin! There are two requirements prior to using VertyCal: Please make a blank PAGE named ', 
             'vertycal' ); ?> 
         <strong><a href="<?php echo esc_url( $newpage ); ?>" 
-                    title="<?php echo esc_html__( 'Sheduler', 'vertycal' ); ?>">
-		<?php echo esc_html__( 'Sheduler', 'vertycal' ); ?></a></strong> <?php esc_html_e( 'And another for Viewing called', 'vertycal' ); ?> <strong>Scheduled</strong>.</p>
+                    title="<?php echo esc_html__( 'Scheduler', 'vertycal' ); ?>">
+		<?php echo esc_html__( 'Scheduler', 'vertycal' ); ?></a></strong> <?php esc_html_e( 'And another for Viewing called', 'vertycal' ); ?> <strong><?php esc_html_e( 'Scheduled', 'vertycal' ); ?></strong>.</p>
         <br>
     </div>
     <?php delete_transient( 'vrtcl-admin-notice-startup' );

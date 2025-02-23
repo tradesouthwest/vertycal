@@ -719,16 +719,13 @@ function vertycal_color_field_3_cb($args)
  */
 function vertycal_docs_field_0_render()
 { 
-//$nessy = esc_url( plugin_dir_url(dirname(__FILE__)) . 'css/monster68x.png' );
-$schedulertheme_url = 'http://sunlandcomputers/vertycal/documentation/'; 
-?>
-<p class="vrtcl-activate" style="background:#f2f2a0"><?php esc_html_e( 'Thank you for adding this plugin! There are two requirements prior to using VertyCal: Please make a blank PAGE named ', 
-            'vertycal' ); ?> 
-    <strong><a href="<?php echo esc_url( $newpage ); ?>" 
-            title="<?php echo esc_html__( 'Sheduler', 'vertycal' ); ?>">
-    <?php echo esc_html__( 'Sheduler', 'vertycal' ); ?></a></strong> <?php esc_html_e( 'And another for Viewing called', 'vertycal' ); ?> <strong>Scheduled</strong>.</p>
-<?php 
-ob_start();
+    $schedulertheme_url = 'http://sunlandcomputers/vertycal/documentation/'; 
+    ?>
+    <p class="vrtcl-activate" style="background:#f2f2a0"><?php esc_html_e( 'Thank you for adding this plugin! There are two requirements prior to using VertyCal: Please make a blank PAGE named ', 'vertycal' ); ?> 
+        <strong><?php esc_html_e( 'Scheduler', 'vertycal' ); ?></strong><?php esc_html_e( ' And another for Viewing called', 'vertycal' ); ?> 
+        <strong><?php esc_html_e( 'Scheduled', 'vertycal' ); ?></strong>.</p>
+    <?php 
+    ob_start();
 echo '<div class="vrtcl-wrap-docs"><h3>' . esc_html__( 'FAQ - Get more information on the following options and settings', 'vertycal' ) . '</h3><div id="vertycalDocsField">
 <ul class="vertycal-faq">
 

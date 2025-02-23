@@ -26,7 +26,7 @@ function vertycal_custom_post_type_schedule() {
   $args = array(
     'labels'        => $labels,
     'description'    => __( 'Holds the Schedules and Schedule specific data', 'vertycal' ),
-    'rewrite'         => array( 'slug' => 'scheduled', 'with_front' => true ),
+    'rewrite'         => array( 'slug' => 'vertycal', 'with_front' => false ),
     'has_archive'      => true,
     'public'            => true,
     'query_var'      => true,

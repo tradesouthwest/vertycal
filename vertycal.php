@@ -6,9 +6,9 @@
  * Plugin URI:   http://sunlandcomputers/vertycal/scheduler
  * Author:       Larry Judd
  * Author URI:   https://tradesouthwest.com
- * Version:      1.1.4
- * Requires PHP: 5.6
- * Requires CP:  2.4
+ * Version:      1.1.5
+ * Requires PHP: 7.4
+ * Requires CP:  2.2
  * Text Domain:  vertycal
  * Domain Path:  /languages
  * License:      GPLv2 or up
@@ -66,20 +66,25 @@ require_once ( plugin_dir_path(__FILE__) . 'vertycal-init.php' );
     if( is_multisite() ) : 
         add_action('network_admin_notices', 'vertycal_plugin_activation_notices' );
     endif;
-    
+    function flush_rewrite_rules_on_cpt_register() {
+        // IMPORTANT: Only do this on plugin activation or theme switch.
+        // Remove this after the rules are flushed once.
+        flush_rewrite_rules();
+    }    
 /**
  * Activate/deactivate hooks
  * 
  */
 function vertycal_plugin_activation() 
 {
-    flush_rewrite_rules();
+    flush_rewrite_rules_on_cpt_register();
     // Create transient data 
     set_transient( 'vrtcl-admin-notice-startup', true, 5 );
-    return false;
+
 }
 function vertycal_plugin_deactivation() 
 {
+    delete_transient( 'vrtcl-admin-notice-startup' );
     return false;
 }
 
@@ -91,7 +96,7 @@ function vertycal_plugin_deactivation()
 function vertycal_plugin_reactivate() 
 { 
     // clean up any CPT cache
-    flush_rewrite_rules();  
+    flush_rewrite_rules_on_cpt_register();
     return false;      
 }
 
@@ -263,7 +268,7 @@ require_once( plugin_dir_path(__FILE__) . 'admin/vertycal-settings-page.php' );
     add_action( 'manage_vertycal_posts_custom_column',   
                    'vertycal_manage_scheduled_columns', 10, 2 );
     
-    add_action('admin_head',          'vertycal_adminpage_custom_colors');
+    add_action( 'admin_head',         'vertycal_adminpage_custom_colors' );
     add_action( 'wp_dashboard_setup', 'vertycal_remove_dashboard_meta' );  
     add_action( 'wp_dashboard_setup', 'vertycal_add_custom_dashboard_widgets' ); 
     //add_action( 'pre_get_posts',    'vertycal_maybe_remove_wpautop' ); 
